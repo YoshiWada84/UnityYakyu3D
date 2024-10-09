@@ -5,7 +5,7 @@ using UnityEngine;
 public class ballcontroll : MonoBehaviour
 {
     private float timer = 0.0f;
-    private float timeLimit = 1.0f;
+    private float timeLimit = 0.4f;
     public static bool shootSwitch;
 
     // Use this for initialization
@@ -24,7 +24,7 @@ public class ballcontroll : MonoBehaviour
 
         if ((timer > timeLimit) & shootSwitch)
         {
-            float z = 1; // force strength;
+            float z = 2; // force strength;
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             rigidbody.AddForce(0, 0, -z);
 
