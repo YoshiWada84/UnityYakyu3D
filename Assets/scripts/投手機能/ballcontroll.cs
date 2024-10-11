@@ -6,7 +6,7 @@ public class ballcontroll : MonoBehaviour
 {
     private float timer = 0.0f;
     public GameTextes gamas;//試合関連スクリプト
-    private float timeLimit = 0.0f;
+    private float timeLimit = 2.0f;
     public static bool shootSwitch;
     public AudioSource BatAudio;
     public AudioClip BatSE;
@@ -23,7 +23,7 @@ public class ballcontroll : MonoBehaviour
     {
 
         //投球動作
-        if (((timer > timeLimit) & shootSwitch))
+        if (((timer > timeLimit) & shootSwitch)&gamas.gameset==false)
         {
             float z = 3; // force strength;
             Rigidbody rigidbody = GetComponent<Rigidbody>();
@@ -37,13 +37,13 @@ public class ballcontroll : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-
-
+        
     }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Bat")
         {
+            
             BatAudio.PlayOneShot(BatSE);
         }
 
