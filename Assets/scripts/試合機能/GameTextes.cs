@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameTextes : MonoBehaviour
 {
+    public GameObject bat1;//バット
+    public GameObject bat2;//バット
+
     public Text InningText;     //回数
     public Text AttackText;     //先攻チームの得点
     public Text DeffenceText;   //後攻チームの得点
@@ -58,10 +61,14 @@ void Update()
     {
         if (Inning2 == 0)
         {
+            bat1.gameObject.SetActive(true);
+            bat2.gameObject.SetActive(false);
             InningText.text = string.Format("{0}回表", Inning);
         }
         if (Inning2 == 1)
         {
+            bat1.gameObject.SetActive(false);
+            bat2.gameObject.SetActive(true);
             InningText.text = string.Format("{0}回裏", Inning);
         }
         if (Team1 == 0)
@@ -130,7 +137,7 @@ void Update()
 
            
 }
-        else if (4 <= Inning && (AtkPt > DefPt))
+        else if (4 <= Inning && (AtkPt > DefPt)&&change==true)
         {
             InningText.text = string.Format("試合終了");
             if (Team1 == 0)

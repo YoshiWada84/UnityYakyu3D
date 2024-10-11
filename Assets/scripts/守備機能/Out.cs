@@ -16,7 +16,14 @@ public class Out : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (3 <= gamas.Inning)
+        {
+            transform.localScale = new Vector3(10, 7, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(7, 5, 1);
+        }
     }
     void OnCollisionEnter(Collision collision)
     {

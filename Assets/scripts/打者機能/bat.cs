@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bat : MonoBehaviour
 {
-
+    public GameTextes gamas;//試合関連スクリプト
     public GameObject batbat;
     //public GameObject ball;
     [SerializeField, Tooltip("ターゲットオブジェクト")]
@@ -16,13 +16,13 @@ public class bat : MonoBehaviour
     [SerializeField, Tooltip("速度係数")]
     private float SpeedFactor = 0.1f;
     //public float swingATP = 3.0f;//スイングアビリティ
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         //Rigidbody rigid = GetComponent<Rigidbody>();
-        
+
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class bat : MonoBehaviour
                 RotateAxis,
                 360.0f / (1.0f / SpeedFactor) * Time.deltaTime
                 );
-            
+
         }
         else if (!Input.GetKey(KeyCode.Space))
         {
@@ -62,18 +62,19 @@ public class bat : MonoBehaviour
                 RotateAxis,
                 360.0f / (1.0f / SpeedFactor) * Time.deltaTime
                 );
-            
+
             Debug.Log("強スイングが選択されました。");
-            
+
         }
         if (Input.GetKey(KeyCode.D))
         {
             Debug.Log("The D button is being held down.");
         }
     }
+
     private void FixedUpdate()
     {
-        
+
 
     }
 
