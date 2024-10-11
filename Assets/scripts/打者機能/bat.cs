@@ -27,13 +27,14 @@ public class bat : MonoBehaviour
 
     void Update()
     {
-       
-    
+
+
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("通常スイングが選択されました。");
 
             if (TargetObject == null) return;
+
 
             //バッターを中心に回転する
             this.transform.RotateAround(
@@ -41,8 +42,16 @@ public class bat : MonoBehaviour
                 RotateAxis,
                 360.0f / (1.0f / SpeedFactor) * Time.deltaTime
                 );
-
+            
         }
+        else if (!Input.GetKey(KeyCode.Space))
+        {
+            if ((-30 > TargetObject.transform.rotation.y) && (TargetObject.transform.rotation.y > -160))
+            {
+                TargetObject.transform.Rotate(0, 0, 0);
+            }
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             if (TargetObject == null) return;
@@ -62,6 +71,10 @@ public class bat : MonoBehaviour
             Debug.Log("The D button is being held down.");
         }
     }
-    
+    private void FixedUpdate()
+    {
+        
+
+    }
 
 }
