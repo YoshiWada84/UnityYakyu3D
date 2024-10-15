@@ -7,6 +7,8 @@ public class Hit : MonoBehaviour
     public AudioSource HitAudio;
     public AudioClip HitSE;
     public GameTextes gamas;
+
+    public batCPU cpus;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,18 @@ public class Hit : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
+            
             HitAudio.Stop();
             HitAudio.PlayOneShot(HitSE);
+            if (gamas.Inning2 == 0)
+            {
+                gamas.Team1Batter++;
+            }
+            else if (gamas.Inning2 == 1)
+            {
+                gamas.Team2Batter++;
+            }
+
             gamas.Strike = 0;
             gamas.Runner++;
 
@@ -38,6 +50,7 @@ public class Hit : MonoBehaviour
                 gamas.DefPt++;
                 gamas.Runner = 3;
             }
+
         }
     }
 }
