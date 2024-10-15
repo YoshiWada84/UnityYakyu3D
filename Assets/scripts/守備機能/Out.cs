@@ -7,6 +7,7 @@ public class Out : MonoBehaviour
     public AudioSource OutAudio;
     public AudioClip OutSE;
     public GameTextes gamas;
+    public batCPU cpus;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,22 +17,29 @@ public class Out : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (3 <= gamas.Inning)
+        if (1 <= gamas.Inning)
         {
-            transform.localScale = new Vector3(10, 7, 1);
+            transform.localScale = new Vector3(14, 10, 1);
         }
-        else
-        {
-            transform.localScale = new Vector3(7, 5, 1);
-        }
+        
+
     }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ball")
         {
+            
             gamas.Strike=0;
             gamas.Out++;
-
+            if (gamas.Inning2 == 0)
+            {
+                gamas.Team1Batter++;
+            }
+            else if (gamas.Inning2 == 1)
+            {
+                gamas.Team2Batter++;
+            }
+            
             OutAudio.PlayOneShot(OutSE);
             
         }
