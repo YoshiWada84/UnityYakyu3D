@@ -23,7 +23,7 @@ public class ballcontroll : MonoBehaviour
     {
 
         //“Š‹…“®ì
-        if (((timer > timeLimit) & shootSwitch)&gamas.gameset==false&&gamas.change==false)
+        if (((timer > timeLimit) & shootSwitch)&gamas.gameset==false&&gamas.change==false&&gamas.Wait==false)
         {
             float z = 3; // force strength;
             Rigidbody rigidbody = GetComponent<Rigidbody>();
@@ -32,7 +32,7 @@ public class ballcontroll : MonoBehaviour
             timer = 0.0f;
             shootSwitch = false;
         }
-        else if (((timer > timeLimit*3) & shootSwitch) & gamas.gameset == false && gamas.change == true)
+        else if (((timer > timeLimit*3) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)
         {
             float z = 3; // force strength;
             Rigidbody rigidbody = GetComponent<Rigidbody>();

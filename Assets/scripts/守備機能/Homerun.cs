@@ -8,7 +8,7 @@ public class Homerun : MonoBehaviour
     public AudioClip HitSE;
     public GameTextes gamas;
 
-    public batCPU cpus;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +27,7 @@ public class Homerun : MonoBehaviour
             HitAudio.Stop();
             HitAudio.PlayOneShot(HitSE);
             
+
 
             gamas.Strike = 0;
             if (gamas.Inning2 == 0)

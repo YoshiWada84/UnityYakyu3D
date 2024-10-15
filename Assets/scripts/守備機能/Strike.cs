@@ -7,6 +7,8 @@ public class Strike : MonoBehaviour
     public AudioSource OutAudio;
     public AudioClip OutSE;
     public GameTextes gamas;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class Strike : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-
+            
             gamas.Strike++;
             OutAudio.PlayOneShot(OutSE);
         }

@@ -7,7 +7,7 @@ public class Out : MonoBehaviour
     public AudioSource OutAudio;
     public AudioClip OutSE;
     public GameTextes gamas;
-    public batCPU cpus;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class Out : MonoBehaviour
     {
         if (1 <= gamas.Inning)
         {
-            transform.localScale = new Vector3(14, 10, 1);
+            transform.localScale = new Vector3(7, 5, 1);
         }
         
 
