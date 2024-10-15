@@ -7,6 +7,7 @@ public class Foul : MonoBehaviour
     public AudioSource FoulAudio;
     public AudioClip FoulSE;
     public GameTextes gamas;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Foul : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
+           
             FoulAudio.Stop();
             FoulAudio.PlayOneShot(FoulSE);
             if (2<=gamas.Strike )

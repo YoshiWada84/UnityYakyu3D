@@ -21,7 +21,7 @@ public class batCPU : MonoBehaviour
     private float SpeedFactor = -2f;
     //public float swingATP = 3.0f;//スイングアビリティ
 
-
+    public int rand;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +32,10 @@ public class batCPU : MonoBehaviour
     void Update()
     {
 
+        rand = Random.Range(0, 20);
+        
 
-        if (hit == false&&ball.transform.position.z < 9)
+        if (hit == false&&ball.transform.position.z < rand)
         {
             //Debug.Log("通常スイングが選択されました。");
 
@@ -48,7 +50,22 @@ public class batCPU : MonoBehaviour
                 );
 
         }
-       
+        else if (hit == true && ball.transform.position.z < 23)
+        {
+            //Debug.Log("通常スイングが選択されました。");
+
+            if (TargetObject == null) return;
+
+
+            //バッターを中心に回転する
+            this.transform.RotateAround(
+                TargetObject.transform.position,
+                RotateAxis,
+                360.0f / (1.0f / SpeedFactor) * Time.deltaTime
+                );
+
+        }
+
 
 
 

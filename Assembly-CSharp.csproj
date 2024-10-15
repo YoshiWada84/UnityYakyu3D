@@ -57,7 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\守備機能\Hit.cs" />
+    <Compile Include="Assets\scripts\打者機能\CPU\batCPU.cs" />
     <Compile Include="Assets\scripts\守備機能\Foul.cs" />
+    <Compile Include="Assets\scripts\打者機能\CPU\BatCollisionCPU.cs" />
     <Compile Include="Assets\scripts\投手機能\DeleteBall.cs" />
     <Compile Include="Assets\scripts\打者機能\bat.cs" />
     <Compile Include="Assets\scripts\打者機能\bat1P.cs" />
@@ -67,12 +69,17 @@
     <Compile Include="Assets\scripts\守備機能\Homerun.cs" />
     <Compile Include="Assets\scripts\シーン切り替え\END.cs" />
     <Compile Include="Assets\scripts\投手機能\DeffenceLR.cs" />
+    <Compile Include="Assets\scripts\シーン切り替え\TSChange1.cs" />
     <Compile Include="Assets\scripts\打者機能\BatCollision.cs" />
     <Compile Include="Assets\scripts\守備機能\Out.cs" />
     <Compile Include="Assets\scripts\投手機能\ballcontroll.cs" />
     <Compile Include="Assets\scripts\守備機能\Strike.cs" />
-    <Compile Include="Assets\scripts\打者機能\CPU\batCPU.cs" />
-    <Compile Include="Assets\scripts\打者機能\CPU\BatCollisionCPU.cs" />
+    <Compile Include="Assets\scripts\守備機能\CPU\FoulCPU.cs" />
+    <Compile Include="Assets\scripts\守備機能\CPU\HitCPU.cs" />
+    <Compile Include="Assets\scripts\守備機能\CPU\HomerunCPU.cs" />
+    <Compile Include="Assets\scripts\守備機能\CPU\OutCPU.cs" />
+    <Compile Include="Assets\scripts\守備機能\CPU\StrikeCPU.cs" />
+    <Compile Include="Assets\scripts\シーン切り替え\SceneChange1P.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
