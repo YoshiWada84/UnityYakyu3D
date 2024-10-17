@@ -32,7 +32,7 @@ public class batCPU : MonoBehaviour
     void Update()
     {
 
-        rand = Random.Range(0, 20);
+        rand = Random.Range(0, 12);
         
 
         if (hit == false&&ball.transform.position.z < rand)
@@ -50,7 +50,7 @@ public class batCPU : MonoBehaviour
                 );
 
         }
-        else if (hit == true && ball.transform.position.z < 23)
+        else if (hit == true && ( 120>ball.transform.position.z || 140 < ball.transform.position.z))
         {
             //Debug.Log("通常スイングが選択されました。");
 

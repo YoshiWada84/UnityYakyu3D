@@ -7,6 +7,9 @@ public class GameTextes : MonoBehaviour
 {
     public GameObject bat1;//バット
     public GameObject bat2;//バット
+    public GameObject bat3;//バット
+
+    public ballcontroll Ball;//ボール
 
     public Text InningText;     //回数
     public Text AttackText;     //先攻チームの得点
@@ -68,6 +71,11 @@ public class GameTextes : MonoBehaviour
         if (Wait == true&&Input.GetKey(KeyCode.Return))
         {
             Wait = false;
+            change = true;
+            hour = 0;
+            min = 0;
+            sec = 0;
+            Ball.timer = 0;
         }
         if (Inning2 == 0)
         {
@@ -399,7 +407,7 @@ public class GameTextes : MonoBehaviour
         OutText.text = string.Format("O：{0}", Out);
 
         //試合終了判定
-        if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || AtkPt - DefPt <= -7)
+        if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || AtkPt - DefPt <= -10)
         {
             InningText.text = string.Format("試合終了");
             if (Team2 == 0)
@@ -410,6 +418,10 @@ public class GameTextes : MonoBehaviour
             {
                 StrikeText.text = string.Format("ぺりーずの勝ち");
             }
+            else if (Team2 == 2)
+            {
+                StrikeText.text = string.Format("ゴスペラーズの勝ち");
+            }
             else
             {
                 StrikeText.text = string.Format("後攻チームの勝ち");
@@ -419,7 +431,7 @@ public class GameTextes : MonoBehaviour
 
 
         }
-        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||AtkPt-DefPt>=7)
+        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||AtkPt-DefPt>=10)
         {
             InningText.text = string.Format("試合終了");
             if (Team1 == 0)
@@ -430,6 +442,10 @@ public class GameTextes : MonoBehaviour
             {
                 StrikeText.text = string.Format("ぺりーずの勝ち");
             }
+            else if (Team1 == 2)
+            {
+                StrikeText.text = string.Format("ゴスペラーズの勝ち");
+            }
             else
             {
                 StrikeText.text = string.Format("先攻チームの勝ち");
@@ -438,13 +454,13 @@ public class GameTextes : MonoBehaviour
             OutText.text = string.Format("");
             gameset = true;
         }
-        else if (7 <= Inning && (AtkPt == DefPt))
+        /*else if (7 <= Inning && (AtkPt == DefPt))
         {
             InningText.text = string.Format("試合終了");
             StrikeText.text = string.Format("引き分け");
             OutText.text = string.Format("");
             gameset = true;
-        }
+        }*/
         if (gameset == false)
         {
             sec++;
