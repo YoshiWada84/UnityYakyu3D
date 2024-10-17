@@ -19,7 +19,7 @@ public class Out : MonoBehaviour
     {
         if (1 <= gamas.Inning)
         {
-            transform.localScale = new Vector3(7, 5, 1);
+            transform.localScale = new Vector3(12, 8, 1);
         }
         
 

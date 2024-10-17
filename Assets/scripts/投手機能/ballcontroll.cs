@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ballcontroll : MonoBehaviour
 {
-    private float timer = 0.0f;
+
+    public float timer = 0.0f;
     public GameTextes gamas;//試合関連スクリプト
-    private float timeLimit = 2.0f;
+    private float timeLimit = 1.0f;
+    
     public static bool shootSwitch;
     public AudioSource BatAudio;
     public AudioClip BatSE;
@@ -21,20 +23,20 @@ public class ballcontroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        float z = Random.RandomRange(3.0f, 6.0f);
         //投球動作
         if (((timer > timeLimit) & shootSwitch)&gamas.gameset==false&&gamas.change==false&&gamas.Wait==false)
         {
-            float z = 3; // force strength;
+           
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             rigidbody.AddForce(0, 0, -z);
 
             timer = 0.0f;
             shootSwitch = false;
         }
-        else if (((timer > timeLimit*3) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)
+        else if (((timer > timeLimit*2) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)
         {
-            float z = 3; // force strength;
+            
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             rigidbody.AddForce(0, 0, -z);
 
@@ -59,4 +61,5 @@ public class ballcontroll : MonoBehaviour
 
 
     }
+    
 }
