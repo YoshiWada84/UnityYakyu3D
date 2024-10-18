@@ -7,11 +7,20 @@ namespace ExplosionSample
     {
         
         [Header("”š•—‚ÌPrefab")] [SerializeField] private Explosion _explosionPrefab;
+        public ballcontroll BC;
+        private GameTextes gamas;
+       
 
-        private void Start()
+        void Update()
         {
-            // ˆê’èŠÔŒo‰ßŒã‚É”­‰Î
-            Invoke(nameof(Explode),0);
+            if (BC.hitBomb == true)
+            {
+                // ˆê’èŠÔŒo‰ßŒã‚É”­‰Î
+                Invoke(nameof(Explode), 0);
+                BC.hitBomb = false;
+               
+            }
+            
         }
 
         private void Explode()
@@ -21,7 +30,7 @@ namespace ExplosionSample
             explosion.Explode();
 
             // ©g‚ÍÁ‚¦‚é
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

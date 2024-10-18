@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BatCollision : MonoBehaviour
 {
-    //private float bounce = 10f;
     
+    //private float bounce = 10f;
+
     public GameObject batbat;
     // Start is called before the first frame update
     void Start()
