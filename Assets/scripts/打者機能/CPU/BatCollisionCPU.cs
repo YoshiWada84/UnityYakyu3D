@@ -5,9 +5,10 @@ using UnityEngine;
 public class BatCollisionCPU : MonoBehaviour
 {
     //private float bounce = 10f;
-
+    public ballcontroll ball;
     public batCPU bat;
     public GameObject batbat;
+    public GameTextes gamas;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,12 @@ public class BatCollisionCPU : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if (collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball"&&ball.hitBomb==false&&(gamas.Runner+1>gamas.AtkPt-gamas.DefPt||gamas.Out==2))
+        {
+            bat.hit = true;
+            ball.hitBomb = true;
+        }
+        else if (collision.gameObject.tag == "Ball")
         {
             bat.hit = true;
             

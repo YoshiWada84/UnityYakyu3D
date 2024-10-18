@@ -6,7 +6,8 @@ namespace ExplosionSample
 {
     public class Explosion : MonoBehaviour
     {
-        public bool hitBomb = false;
+        
+        
         [Header("爆風に当たったときに吹っ飛ぶ力の強さ")]
         [SerializeField]
         private float _futtobiPower;
@@ -47,6 +48,7 @@ namespace ExplosionSample
             // エフェクトと効果音再生
             _effect.Play();
             _sfx.Play();
+            
         }
 
         private IEnumerator ExplodeCoroutine()

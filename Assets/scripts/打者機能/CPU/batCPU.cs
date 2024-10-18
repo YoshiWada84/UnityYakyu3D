@@ -1,12 +1,12 @@
+using ExplosionSample;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class batCPU : MonoBehaviour
 {
+   
     public GameTextes gamas;//試合関連スクリプト
-    
-        
     public ballcontroll ball;
     public GameObject batbat;
     public bool hit=false;
@@ -66,7 +66,7 @@ public class batCPU : MonoBehaviour
 
         }
 
-
+        
 
 
 

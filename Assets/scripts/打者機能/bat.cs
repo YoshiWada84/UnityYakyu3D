@@ -28,7 +28,7 @@ public class bat : MonoBehaviour
     void Update()
     {
 
-
+        
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("通常スイングが選択されました。");
@@ -44,32 +44,11 @@ public class bat : MonoBehaviour
                 );
 
         }
-        else if (!Input.GetKey(KeyCode.Space))
-        {
-            if ((-30 > TargetObject.transform.rotation.y) && (TargetObject.transform.rotation.y > -160))
-            {
-                TargetObject.transform.Rotate(0, 0, 0);
-            }
-        }
+        
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            if (TargetObject == null) return;
+           // Debug.Log("強スイングが選択されました。");
 
-            //バッターを中心に回転する
-            this.transform.RotateAround(
-                TargetObject.transform.position,
-                RotateAxis,
-                360.0f / (1.0f / SpeedFactor) * Time.deltaTime
-                );
-
-            Debug.Log("強スイングが選択されました。");
-
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            Debug.Log("The D button is being held down.");
-        }
+        
     }
 
     private void FixedUpdate()
