@@ -55,11 +55,18 @@ public class ballcontroll : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bat"&&((Input.GetKey(KeyCode.A)||Input.GetMouseButton(1))))
+        if (collision.gameObject.tag == "Bat"&&((Input.GetKey(KeyCode.A)&&gamas.Inning2==0)))
         {
             BatAudio.PlayOneShot(BatSE);
             hitBomb = true;
         }
+        if (collision.gameObject.tag == "Bat" && ((Input.GetMouseButton(1) && gamas.Inning2 == 1)))
+        {
+            BatAudio.PlayOneShot(BatSE);
+            hitBomb = true;
+        }
+
+
         else if (collision.gameObject.tag == "Bat")
         {
             BatAudio.PlayOneShot(BatSE);

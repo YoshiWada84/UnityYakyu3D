@@ -68,6 +68,40 @@ public class GameTextes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Wait == true)
+        {
+            if (Input.GetKey(KeyCode.Alpha1))
+            {
+                Team1 = 0;
+                Team2 = 1;
+            }
+            else if (Input.GetKey(KeyCode.Alpha2))
+            {
+                Team1 = 0;
+                Team2 = 2;
+            }
+            else if (Input.GetKey(KeyCode.Alpha3))
+            {
+                Team1 = 1;
+                Team2 = 0;
+            }
+            else if (Input.GetKey(KeyCode.Alpha4))
+            {
+                Team1 = 1;
+                Team2 = 2;
+            }
+            else if (Input.GetKey(KeyCode.Alpha5))
+            {
+                Team1 = 2;
+                Team2 = 0;
+            }
+            else if (Input.GetKey(KeyCode.Alpha6))
+            {
+                Team1 = 2;
+                Team2 = 1;
+            }
+           
+        }
         if (Wait == true&&Input.GetKey(KeyCode.Return))
         {
             Wait = false;
