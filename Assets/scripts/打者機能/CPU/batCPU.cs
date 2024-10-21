@@ -9,6 +9,7 @@ public class batCPU : MonoBehaviour
     public GameTextes gamas;//試合関連スクリプト
     public ballcontroll ball;
     public GameObject batbat;
+    public GameObject Bomb;
     public bool hit=false;
     //public GameObject ball;
     [SerializeField, Tooltip("ターゲットオブジェクト")]
@@ -66,6 +67,10 @@ public class batCPU : MonoBehaviour
 
         }
 
+        if (Input.GetMouseButton(1))
+        {
+            Bomb.SetActive(true);
+        }
         
 
 
