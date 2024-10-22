@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameTextes : MonoBehaviour
 {
@@ -440,6 +441,12 @@ public class GameTextes : MonoBehaviour
         StrikeText.text = string.Format("S：{0}", Strike);
         OutText.text = string.Format("O：{0}", Out);
 
+        //タイブレーク
+        if (4 <= Inning && change == true)
+        {
+            Runner = 2;
+        }
+
         //試合終了判定
         if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || AtkPt - DefPt <= -10)
         {
@@ -487,6 +494,10 @@ public class GameTextes : MonoBehaviour
 
             OutText.text = string.Format("");
             gameset = true;
+        }
+        if (gameset == true && change == false&&Input.GetKey(KeyCode.Return))
+        {
+            SceneManager.LoadScene("Title");
         }
         /*else if (7 <= Inning && (AtkPt == DefPt))
         {
