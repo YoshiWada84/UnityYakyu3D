@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class batCPU : MonoBehaviour
 {
-   
+    
     public GameTextes gamas;//試合関連スクリプト
     public ballcontroll ball;
     public GameObject batbat;
     public GameObject Bomb;
+    private int r = 2; // Rotation Speed
+    private int r_sum = 0;
+    private int r_max = 220;
     public bool hit=false;
     //public GameObject ball;
     [SerializeField, Tooltip("ターゲットオブジェクト")]
@@ -21,7 +24,7 @@ public class batCPU : MonoBehaviour
     [SerializeField, Tooltip("速度係数")]
     private float SpeedFactor = -2f;
     //public float swingATP = 3.0f;//スイングアビリティ
-
+   
     public int rand;
     // Start is called before the first frame update
     void Start()
@@ -32,39 +35,27 @@ public class batCPU : MonoBehaviour
 
     void Update()
     {
-
-        rand = Random.Range(0, 12);
-        
-
-        if (hit == false&&ball.transform.position.z < rand)
+        if (ball.pitch == false)
         {
-            //Debug.Log("通常スイングが選択されました。");
+            rand = Random.Range(3, 12);
+        }
 
+        if ((ball.transform.position.z < rand) && r_sum < r_max)
+        {
             if (TargetObject == null) return;
 
-
-            //バッターを中心に回転する
-            this.transform.RotateAround(
-                TargetObject.transform.position,
-                RotateAxis,
-                360.0f / (1.0f / SpeedFactor) * Time.deltaTime
-                );
+            transform.Rotate(0, -r, 0);
+            r_sum += r;
 
         }
-        else if (hit == true && ( 120>ball.transform.position.z || 140 < ball.transform.position.z))
+        else if (r_sum != 0)
         {
             //Debug.Log("通常スイングが選択されました。");
-
+            transform.Rotate(0, r, 0);
+            r_sum -= r;
             if (TargetObject == null) return;
 
-
-            //バッターを中心に回転する
-            this.transform.RotateAround(
-                TargetObject.transform.position,
-                RotateAxis,
-                360.0f / (1.0f / SpeedFactor) * Time.deltaTime
-                );
-
+            
         }
 
         if (Input.GetMouseButton(1))

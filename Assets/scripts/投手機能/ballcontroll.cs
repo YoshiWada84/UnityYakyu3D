@@ -10,7 +10,7 @@ public class ballcontroll : MonoBehaviour
     public float timer = 0.0f;
     public GameTextes gamas;//試合関連スクリプト
     private float timeLimit = 1.0f;
-    
+    public bool pitch = false;//shootSwitchの弟みたいなやつ
     public static bool shootSwitch;
     public AudioSource BatAudio;
     public AudioClip BatSE;
@@ -25,7 +25,7 @@ public class ballcontroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float z = Random.RandomRange(3.0f, 8.0f);
+        float z = Random.RandomRange(5.0f, 7.0f);
         //投球動作
         if (((timer > timeLimit) & shootSwitch)&gamas.gameset==false&&gamas.change==false&&gamas.Wait==false)
         {
@@ -35,6 +35,7 @@ public class ballcontroll : MonoBehaviour
 
             timer = 0.0f;
             shootSwitch = false;
+            pitch = true;
         }
         else if (((timer > timeLimit*2) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)
         {
@@ -45,6 +46,7 @@ public class ballcontroll : MonoBehaviour
             timer = 0.0f;
             shootSwitch = false;
             gamas.change = false;
+            pitch = true;
         }
 
         if (shootSwitch)
@@ -70,6 +72,7 @@ public class ballcontroll : MonoBehaviour
         else if (collision.gameObject.tag == "Bat")
         {
             BatAudio.PlayOneShot(BatSE);
+            pitch = false;
 
         }
 

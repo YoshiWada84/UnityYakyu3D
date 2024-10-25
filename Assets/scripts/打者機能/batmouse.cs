@@ -7,14 +7,9 @@ public class batmouse : MonoBehaviour
     public GameTextes gamas;//試合関連スクリプト
     public GameObject batbat;
     //public GameObject ball;
-    [SerializeField, Tooltip("ターゲットオブジェクト")]
-    private GameObject TargetObject;
-
-    [SerializeField, Tooltip("回転軸")]
-    private Vector3 RotateAxis = Vector3.up;
-
-    [SerializeField, Tooltip("速度係数")]
-    private float SpeedFactor = 0.1f;
+    private int r = 2; // Rotation Speed
+    private int r_sum = 0;
+    private int r_max = 260;
     //public float swingATP = 3.0f;//スイングアビリティ
 
 
@@ -29,23 +24,22 @@ public class batmouse : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && r_sum < r_max)
         {
             Debug.Log("通常スイングが選択されました。");
 
-            if (TargetObject == null) return;
+            //if (TargetObject == null) return;
 
-
-            //バッターを中心に回転する
-            this.transform.RotateAround(
-                TargetObject.transform.position,
-                RotateAxis,
-                360.0f / (1.0f / SpeedFactor) * Time.deltaTime
-                );
-
+            transform.Rotate(0, -r, 0);
+            r_sum += r;
         }
-       
-        
+        else if (!Input.GetMouseButton(0) && r_sum != 0)
+        {
+            transform.Rotate(0, r, 0);
+            r_sum -= r;
+        }
+
+
     }
 
     private void FixedUpdate()

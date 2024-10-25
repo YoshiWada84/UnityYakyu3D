@@ -22,7 +22,7 @@ public class BatCollisionCPU : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball"&&ball.hitBomb==false&&(gamas.Runner+1>gamas.AtkPt-gamas.DefPt||gamas.Out==2))
+        if (collision.gameObject.tag == "Ball"&&ball.hitBomb==false&&((gamas.Runner+1>gamas.AtkPt-gamas.DefPt&&3<=gamas.Inning)||gamas.Out==2))
         {
             bat.hit = true;
             ball.hitBomb = true;
