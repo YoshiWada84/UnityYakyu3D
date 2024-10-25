@@ -10,6 +10,9 @@ public class GameTextes : MonoBehaviour
     public GameObject bat2;//バット
     public GameObject Bakugeki;//爆発
     public ballcontroll Ball;//ボール
+    
+    public GameObject Ground1;//グラウンド1
+    public GameObject Ground2;//グラウンド2
 
     public Text InningText;     //回数
     public Text AttackText;     //先攻チームの得点
@@ -62,7 +65,8 @@ public class GameTextes : MonoBehaviour
         gameset = false;
         change = false;
         Wait = true;
-
+        Ground1.gameObject.SetActive(true);
+        Ground2.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -74,31 +78,43 @@ public class GameTextes : MonoBehaviour
             {
                 Team1 = 0;
                 Team2 = 1;
+                Ground1.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
             }
             else if (Input.GetKey(KeyCode.Alpha2))
             {
                 Team1 = 0;
                 Team2 = 2;
+                Ground1.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
             }
             else if (Input.GetKey(KeyCode.Alpha3))
             {
                 Team1 = 1;
                 Team2 = 0;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
             }
             else if (Input.GetKey(KeyCode.Alpha4))
             {
                 Team1 = 1;
                 Team2 = 2;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
             }
             else if (Input.GetKey(KeyCode.Alpha5))
             {
                 Team1 = 2;
                 Team2 = 0;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
             }
             else if (Input.GetKey(KeyCode.Alpha6))
             {
                 Team1 = 2;
                 Team2 = 1;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
             }
            
         }

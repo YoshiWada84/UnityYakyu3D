@@ -8,31 +8,34 @@ public class SceneChange1P : MonoBehaviour
     public AudioClip audio1;
     public AudioSource audioSource; //オーディオソース    
     public GameObject mask;
-
+    private bool a=false;
     public void Start()
     {
         audioSource = this.gameObject.GetComponent<AudioSource>(); //オーディオソース取得
     }
     public void OnClickStartButton()
     {
-        audioSource.PlayOneShot(audio1);
-        mask = GameObject.Find("RawImage");
+        if (a == false)
+        {
+            audioSource.PlayOneShot(audio1);
+            a = true;
+            mask = GameObject.Find("RawImage");
 
-        //画面全体に広げる
-        mask.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
+            //画面全体に広げる
+            mask.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
 
-        //透明度を最大にする
-        Color color_before = mask.GetComponent<RawImage>().color;
-        color_before.a = 0.0f;
-        Color color_after = color_before;
-        mask.GetComponent<RawImage>().color = color_after;
+            //透明度を最大にする
+            Color color_before = mask.GetComponent<RawImage>().color;
+            color_before.a = 0.0f;
+            Color color_after = color_before;
+            mask.GetComponent<RawImage>().color = color_after;
 
-        //非活性にし画面を操作できるようにする
-        mask.GetComponent<RawImage>().enabled = false;
+            //非活性にし画面を操作できるようにする
+            mask.GetComponent<RawImage>().enabled = false;
 
-        //画面遷移
-        transition();
-        
+            //画面遷移
+            transition();
+        }
     }
     void transition()
     {
