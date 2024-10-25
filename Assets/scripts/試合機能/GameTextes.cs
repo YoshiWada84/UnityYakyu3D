@@ -9,7 +9,6 @@ public class GameTextes : MonoBehaviour
     public GameObject bat1;//バット
     public GameObject bat2;//バット
     public GameObject Bakugeki;//爆発
-
     public ballcontroll Ball;//ボール
 
     public Text InningText;     //回数
@@ -448,7 +447,7 @@ public class GameTextes : MonoBehaviour
         }
 
         //試合終了判定
-        if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || AtkPt - DefPt <= -10)
+        if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) /*|| AtkPt - DefPt <= -10*/)
         {
             InningText.text = string.Format("試合終了");
             if (Team2 == 0)
@@ -472,7 +471,7 @@ public class GameTextes : MonoBehaviour
 
 
         }
-        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||AtkPt-DefPt>=10)
+        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)/*||AtkPt-DefPt>=10*/)
         {
             InningText.text = string.Format("試合終了");
             if (Team1 == 0)
@@ -495,7 +494,7 @@ public class GameTextes : MonoBehaviour
             OutText.text = string.Format("");
             gameset = true;
         }
-        if (gameset == true && change == false&&Input.GetKey(KeyCode.Return))
+        if (gameset == true &&Input.GetKey(KeyCode.Return))
         {
             SceneManager.LoadScene("Title");
         }
