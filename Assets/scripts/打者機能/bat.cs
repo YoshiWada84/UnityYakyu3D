@@ -1,3 +1,4 @@
+using ExplosionSample;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class bat : MonoBehaviour
     private int r_sum = 0;
     private int r_max = 260;
 
+    //public GameObject Bomb;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,11 @@ public class bat : MonoBehaviour
             transform.Rotate(0, r, 0);
             r_sum -= r;
         }
-
+        /*if (Input.GetKey(KeyCode.Alpha0))
+        {
+            gamas.Runner = 3;
+            Bomb.SetActive(true);
+        }*/
 
         // Debug.Log("強スイングが選択されました。");
 

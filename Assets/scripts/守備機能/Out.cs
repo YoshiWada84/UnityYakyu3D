@@ -12,10 +12,11 @@ public class Out : MonoBehaviour
     private float position_y = 4;//現在位置y
     private float positioning_max_x = 20;//最大位置
     private float positioning_max_y = 30;//最大位置
-    public int time_def = 200;
+    public int time_def = 400;
 
 
-    
+    public Text OPText;        //OPテキスト
+
     public int currentTP=400;
     
 
@@ -33,22 +34,31 @@ public class Out : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        OPText.text = string.Format("DP：{0}", time_def);
 
         if (gamas.change == true)
         {
             time_def = 400;
         }
+        if ((gamas.Team1 == 2 && gamas.Inning2 == 0) && gamas.change == true)
+        {
+            time_def = 4000;
+        }
+        if ((gamas.Team2 == 2 && gamas.Inning2 == 1) && gamas.change == true)
+        {
+            time_def = 4000;
+        }
         if (1 <= gamas.Inning)
         {
             transform.localScale = new Vector3(position_x, position_y, 1);
         }
-        if (gamas.Inning2 == 0 && Input.GetMouseButton(0) && time_def >1)
+
+        if (gamas.Inning2 == 0 && Input.GetMouseButton(0) && time_def >0)
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 1);
             time_def--;
         }
-        if (gamas.Inning2 == 1 && Input.GetKey(KeyCode.A) &&time_def>1) 
+        if (gamas.Inning2 == 1 && Input.GetKey(KeyCode.A) &&time_def>0) 
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 1);
             time_def--;
