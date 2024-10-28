@@ -8,18 +8,16 @@ ScriptsOnlyBuild:
     - ExplosionSample.Bomb
     - ExplosionSample.Explosion
     - Foul
-    - FoulCPU
     - GameTextes
     - Hit
-    - HitCPU
     - Homerun
-    - HomerunCPU
     - Out
     - OutCPU
     - SceneChange1P
     - SceneChange2P
     - Strike
-    - StrikeCPU
+    - Teams
+    - Teams1
     - ballcontroll
     - bat
     - bat1P
@@ -56,6 +54,12 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: SceneChange2P
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Teams
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Teams1
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: END
@@ -104,45 +108,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1912}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 2262}
+      Script: {instanceID: 2268}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 3798}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 4154}
+      Script: {instanceID: 3810}
     - Class: 114
-      Script: {instanceID: 4738}
+      Script: {instanceID: 4168}
     - Class: 114
-      Script: {instanceID: 4932}
+      Script: {instanceID: 4752}
     - Class: 114
-      Script: {instanceID: 5180}
+      Script: {instanceID: 4946}
     - Class: 114
-      Script: {instanceID: 5474}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5540}
+      Script: {instanceID: 5488}
     - Class: 114
-      Script: {instanceID: 5910}
+      Script: {instanceID: 5554}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 5680}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 5952}
     - Class: 114
-      Script: {instanceID: 6258}
+      Script: {instanceID: 6212}
     - Class: 114
-      Script: {instanceID: 6828}
+      Script: {instanceID: 6844}
     - Class: 114
-      Script: {instanceID: 7346}
+      Script: {instanceID: 6974}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -209,45 +213,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 0}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 2268}
     - Class: 114
-      Script: {instanceID: 2262}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3810}
     - Class: 114
-      Script: {instanceID: 3798}
+      Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 3888}
+      Script: {instanceID: 4202}
     - Class: 114
-      Script: {instanceID: 4188}
+      Script: {instanceID: 4752}
     - Class: 114
-      Script: {instanceID: 4738}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5180}
+      Script: {instanceID: 5488}
     - Class: 114
-      Script: {instanceID: 5474}
+      Script: {instanceID: 5554}
     - Class: 114
-      Script: {instanceID: 5540}
+      Script: {instanceID: 5680}
     - Class: 114
-      Script: {instanceID: 5666}
+      Script: {instanceID: 5952}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 6212}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 6840}
     - Class: 114
-      Script: {instanceID: 6824}
+      Script: {instanceID: 6844}
     - Class: 114
-      Script: {instanceID: 6828}
-    - Class: 114
-      Script: {instanceID: 6958}
+      Script: {instanceID: 6974}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -283,9 +285,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -300,32 +312,44 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1560}
+      Script: {instanceID: 1564}
     - Class: 114
-      Script: {instanceID: 2262}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2268}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 3020}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 4774}
+      Script: {instanceID: 2988}
     - Class: 114
-      Script: {instanceID: 5180}
+      Script: {instanceID: 3030}
     - Class: 114
-      Script: {instanceID: 5474}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 5734}
+      Script: {instanceID: 3582}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 4788}
     - Class: 114
-      Script: {instanceID: 6098}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 22652}
+      Script: {instanceID: 5488}
+    - Class: 114
+      Script: {instanceID: 5680}
+    - Class: 114
+      Script: {instanceID: 5748}
+    - Class: 114
+      Script: {instanceID: 5952}
+    - Class: 114
+      Script: {instanceID: 6114}
+    - Class: 114
+      Script: {instanceID: 6974}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -444,6 +468,12 @@ ScriptsOnlyBuild:
     className: UnityOnPointerUpMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 3a3324b73792dde0ff97dae69b3a3dfb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.ImageEffects
+    className: SunShafts
+  - hash:
+      serializedVersion: 2
       Hash: 91d258529db2b5060a913f2afcea1a21
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
@@ -502,6 +532,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionEnterMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 5648183942e1c22d510c7a8406031fc8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlyCamera
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -574,6 +610,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 8a12578b928d4f482211012a68316f81
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Teams
   - hash:
       serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
@@ -688,6 +730,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionExit2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 89c9ece16d587157ce4d7e7b8f40aa3b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Teams1
   - hash:
       serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
@@ -876,7 +924,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: eefbe6357592fdc55fa1fcac6a333bd0
+      Hash: 6ae8ddd804a40688ec154d8f1d765b8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneChange2P
@@ -912,7 +960,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionEnter2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: d57ac09db06785dac41dcc3c3d7cd8ec
+      Hash: 21bef34585e488278ca79cafd8039e0f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OutCPU
@@ -966,7 +1014,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 864f66ae1585a29d26cc06766d88e99e
+      Hash: 48bbfa19706c20c9d2db7e7ced5971b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameTextes
@@ -1006,6 +1054,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpAsButtonMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.ImageEffects
+    className: PostEffectsBase
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1056,7 +1110,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: eefbe6357592fdc55fa1fcac6a333bd0
+      Hash: 6ae8ddd804a40688ec154d8f1d765b8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneChange1P
@@ -1182,7 +1236,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 99e224c251a1fff688e94daa40ae48a9
+      Hash: e8099e7503585d03267bf6e2bdf6da84
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Out
@@ -1276,12 +1330,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnToggleValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SwingBat
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f

@@ -6,9 +6,7 @@ public class bat1P : MonoBehaviour
 {
     public GameTextes gamas;//試合関連スクリプト
     public GameObject batbat;
-    //public GameObject ball;
     
-    //public float swingATP = 3.0f;//スイングアビリティ
     private int r = 2; // Rotation Speed
     private int r_sum = 0;
     private int r_max = 260;
@@ -23,16 +21,14 @@ public class bat1P : MonoBehaviour
     {
 
 
-        if ((Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0)) && r_sum < r_max)
+        if ((Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0)||Input.GetKey(KeyCode.A)) && r_sum < r_max)
         {
             Debug.Log("通常スイングが選択されました。");
-
-            
 
             transform.Rotate(0, -r, 0);
             r_sum += r;
         }
-        else if ((!Input.GetKey(KeyCode.Space)&& !Input.GetMouseButton(0)) && r_sum != 0)
+        else if ((!Input.GetKey(KeyCode.Space)&& !Input.GetMouseButton(0)&& !Input.GetKey(KeyCode.A)) && r_sum != 0)
         {
             transform.Rotate(0, r, 0);
             r_sum -= r;
