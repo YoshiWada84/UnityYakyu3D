@@ -12,7 +12,7 @@ public class batCPU : MonoBehaviour
     public GameObject Bomb;
     private int r = 2; // Rotation Speed
     private int r_sum = 0;
-    private int r_max = 220;
+    private int r_max = 260;
     public bool hit=false;
     //public GameObject ball;
     [SerializeField, Tooltip("ターゲットオブジェクト")]

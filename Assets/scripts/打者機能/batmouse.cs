@@ -24,16 +24,14 @@ public class batmouse : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButton(0) && r_sum < r_max)
+        if ((Input.GetMouseButton(0)|| Input.GetMouseButton(1)) && r_sum < r_max)
         {
             Debug.Log("通常スイングが選択されました。");
-
-            //if (TargetObject == null) return;
 
             transform.Rotate(0, -r, 0);
             r_sum += r;
         }
-        else if (!Input.GetMouseButton(0) && r_sum != 0)
+        else if ((!Input.GetMouseButton(0) && (!Input.GetMouseButton(1)) && r_sum != 0))
         {
             transform.Rotate(0, r, 0);
             r_sum -= r;

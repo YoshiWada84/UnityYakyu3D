@@ -24,7 +24,7 @@ public class bat : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space) && r_sum < r_max)
+        if ((Input.GetKey(KeyCode.Space)|| (Input.GetKey(KeyCode.A))) && r_sum < r_max)
         {
             Debug.Log("通常スイングが選択されました。");
 
@@ -33,7 +33,7 @@ public class bat : MonoBehaviour
             transform.Rotate(0, -r, 0);
             r_sum += r;
         }
-        else if (!Input.GetKey(KeyCode.Space) && r_sum != 0)
+        else if ((!Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.A) && r_sum != 0))
         {
             transform.Rotate(0, r, 0);
             r_sum -= r;

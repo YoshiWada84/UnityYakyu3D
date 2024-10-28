@@ -9,7 +9,7 @@ public class SceneChange2P : MonoBehaviour
     public AudioSource audioSource; //オーディオソース    
     public GameObject mask;
 
-    private bool a = false;
+    public bool a = false;
     public void Start()
     {
         audioSource = this.gameObject.GetComponent<AudioSource>(); //オーディオソース取得
