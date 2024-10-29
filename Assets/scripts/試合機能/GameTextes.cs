@@ -17,6 +17,13 @@ public class GameTextes : MonoBehaviour
     public GameObject Ground1;//グラウンド1
     public GameObject Ground2;//グラウンド2
 
+    //BGM
+    public GameObject BGM1;
+    public GameObject BGM2;
+    public GameObject BGM3;
+    public GameObject BGM4;
+
+
     public Text InningText;     //回数
     public Text AttackText;     //先攻チームの得点
     public Text DeffenceText;   //後攻チームの得点
@@ -48,6 +55,8 @@ public class GameTextes : MonoBehaviour
     public bool change;    //攻守交替
     public bool Wait;      //チーム決め
 
+    //BGM
+    
 
 
     // Start is called before the first frame update
@@ -70,6 +79,11 @@ public class GameTextes : MonoBehaviour
         Wait = true;
         Ground1.gameObject.SetActive(true);
         Ground2.gameObject.SetActive(false);
+
+        BGM1.gameObject.SetActive(true);
+        BGM2.gameObject.SetActive(false);
+        BGM3.gameObject.SetActive(false);
+        BGM4.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -83,6 +97,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 1;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
+                
             }
             else if (Input.GetKey(KeyCode.Alpha2))
             {
@@ -90,6 +105,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 2;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
+                
             }
             else if (Input.GetKey(KeyCode.Alpha3))
             {
@@ -97,6 +113,8 @@ public class GameTextes : MonoBehaviour
                 Team2 = 0;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
+                
+
             }
             else if (Input.GetKey(KeyCode.Alpha4))
             {
@@ -104,6 +122,8 @@ public class GameTextes : MonoBehaviour
                 Team2 = 2;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
+                
+
             }
             else if (Input.GetKey(KeyCode.Alpha5))
             {
@@ -111,6 +131,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 0;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
+                
             }
             else if (Input.GetKey(KeyCode.Alpha6))
             {
@@ -118,8 +139,9 @@ public class GameTextes : MonoBehaviour
                 Team2 = 1;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
+                
             }
-           
+
         }
         if (Wait == true&&Input.GetKey(KeyCode.Return))
         {
@@ -129,22 +151,30 @@ public class GameTextes : MonoBehaviour
             min = 0;
             sec = 0;
             Ball.timer = 0;
+            BGM1.gameObject.SetActive(false);
         }
-        if (Inning2 == 0)
+        #region//チーム
+        if (Inning2 == 0&&Wait==false&&gameset==false)
         {
             bat1.gameObject.SetActive(true);
             bat2.gameObject.SetActive(false);
             InningText.text = string.Format("{0}回表", Inning);
-
-
+            BGM2.gameObject.SetActive(true);
+            BGM1.gameObject.SetActive(false);
+            BGM3.gameObject.SetActive(false);
+            BGM4.gameObject.SetActive(false);
 
         }
-        #region//チーム
-        if (Inning2 == 1)
+        
+        if (Inning2 == 1&&Wait==false && gameset == false)
         {
             bat1.gameObject.SetActive(false);
             bat2.gameObject.SetActive(true);
             InningText.text = string.Format("{0}回裏", Inning);
+            BGM3.gameObject.SetActive(true);
+            BGM1.gameObject.SetActive(false);
+            BGM2.gameObject.SetActive(false);
+            BGM4.gameObject.SetActive(false);
             if (Team1 == 0)
             {
                 T1Text.text = string.Format("P　ざき");
@@ -504,7 +534,10 @@ public class GameTextes : MonoBehaviour
             }
             OutText.text = string.Format("");
             gameset = true;
-
+            BGM4.gameObject.SetActive(true);
+            BGM1.gameObject.SetActive(false);
+            BGM2.gameObject.SetActive(false);
+            BGM3.gameObject.SetActive(false);
 
         }
         else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)/*||AtkPt-DefPt>=10*/)
@@ -529,6 +562,11 @@ public class GameTextes : MonoBehaviour
 
             OutText.text = string.Format("");
             gameset = true;
+            BGM4.gameObject.SetActive(true);
+            BGM1.gameObject.SetActive(false);
+            BGM2.gameObject.SetActive(false);
+            BGM3.gameObject.SetActive(false);
+
         }
         if (gameset == true &&Input.GetKey(KeyCode.Return))
         {

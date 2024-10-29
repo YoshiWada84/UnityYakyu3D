@@ -13,8 +13,9 @@ public class OutCPU : MonoBehaviour
     private float position_x = 6;//現在位置x
     private float position_y = 4;//現在位置y
     private float positioning_max_x = 15;//最大位置
-    private float positioning_max_y = 40;//最大位置
-    public int time_def = 400;
+    private float positioning_max_y = 50;//最大位置
+    //public int time_def = 400;//テスト版
+    public int time_def = 100;
 
     public Text OPText;        //OPテキスト
 
@@ -56,7 +57,7 @@ public class OutCPU : MonoBehaviour
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 1);
             time_def--;
         }
-        if (gamas.Inning2 == 1 && (Input.GetMouseButton(0)|| Input.GetKey(KeyCode.A)) && time_def > 0)
+        if (gamas.Inning2 == 1 && (Input.GetMouseButton(0)|| Input.GetKey(KeyCode.Space)) && time_def > 0)
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 1);
             time_def--;

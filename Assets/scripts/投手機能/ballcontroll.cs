@@ -9,7 +9,6 @@ public class ballcontroll : MonoBehaviour
     public bool hitBomb = false;
     public float timer = 0.0f;
     public GameTextes gamas;//試合関連スクリプト
-    private float timeLimit = 1.0f;
     public bool pitch = false;//shootSwitchの弟みたいなやつ
     public static bool shootSwitch;
     public AudioSource BatAudio;
@@ -26,6 +25,7 @@ public class ballcontroll : MonoBehaviour
     void Update()
     {
         float z = Random.RandomRange(5.0f, 7.0f);
+        float timeLimit = Random.RandomRange(0.8f, 1.2f);
         //投球動作
         if (((timer > timeLimit) & shootSwitch)&gamas.gameset==false&&gamas.change==false&&gamas.Wait==false)
         {
