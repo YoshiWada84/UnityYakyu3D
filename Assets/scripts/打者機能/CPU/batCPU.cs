@@ -10,7 +10,9 @@ public class batCPU : MonoBehaviour
     public ballcontroll ball;
     public GameObject batbat;
     public GameObject Bomb;
-    private int r = 2; // Rotation Speed
+    //private int r = 10; // Rotation Speed
+    private int r = 1; // Rotation Speedテスト用
+
     private int r_sum = 0;
     private int r_max = 260;
     public bool hit=false;

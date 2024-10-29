@@ -7,7 +7,9 @@ public class batmouse : MonoBehaviour
     public GameTextes gamas;//試合関連スクリプト
     public GameObject batbat;
     //public GameObject ball;
-    private int r = 2; // Rotation Speed
+    //private int r = 10; // Rotation Speed
+    private int r = 1; // Rotation Speedテスト用
+
     private int r_sum = 0;
     private int r_max = 260;
     //public float swingATP = 3.0f;//スイングアビリティ
