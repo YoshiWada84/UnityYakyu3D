@@ -12,8 +12,8 @@ public class OutCPU : MonoBehaviour
     public ballcontroll BC;
     private float position_x = 6;//現在位置x
     private float position_y = 4;//現在位置y
-    private float positioning_max_x = 20;//最大位置
-    private float positioning_max_y = 30;//最大位置
+    private float positioning_max_x = 15;//最大位置
+    private float positioning_max_y = 40;//最大位置
     public int time_def = 400;
 
     public Text OPText;        //OPテキスト
@@ -32,7 +32,7 @@ public class OutCPU : MonoBehaviour
         OPText.text = string.Format("DP：{0}", time_def);
         if (gamas.Inning2==0&&gamas.change == true)
         {
-            time_def = 800;
+            time_def = 400;
         }
         if (gamas.Inning2 == 1 && gamas.change == true)
         {
