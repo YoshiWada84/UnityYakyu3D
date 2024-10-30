@@ -17,6 +17,9 @@ public class GameTextes : MonoBehaviour
     public GameObject Ground1;//グラウンド1
     public GameObject Ground2;//グラウンド2
 
+    public GameObject CText;//チェンジテキスト
+
+
     //BGM
     public GameObject BGM1;
     public GameObject BGM2;
@@ -33,6 +36,7 @@ public class GameTextes : MonoBehaviour
     public Text ScoreText;        //スコアテキスト
     public Text T1Text;        //選手1テキスト
     public Text T2Text;        //選手2テキスト
+    public Text ChangeText;    //チェンジテキスト
 
     public int hour = 0;       //時間
     public int min = 0;         //分
@@ -80,6 +84,9 @@ public class GameTextes : MonoBehaviour
         Ground1.gameObject.SetActive(true);
         Ground2.gameObject.SetActive(false);
 
+        CText.gameObject.SetActive(true);
+
+
         BGM1.gameObject.SetActive(true);
         BGM2.gameObject.SetActive(false);
         BGM3.gameObject.SetActive(false);
@@ -91,6 +98,7 @@ public class GameTextes : MonoBehaviour
     {
         if (Wait == true)
         {
+            InningText.text = string.Format("Enterキーでスタート");
             if (Input.GetKey(KeyCode.Alpha1))
             {
                 Team1 = 0;
@@ -152,6 +160,8 @@ public class GameTextes : MonoBehaviour
             sec = 0;
             Ball.timer = 0;
             BGM1.gameObject.SetActive(false);
+            CText.gameObject.SetActive(false);
+
         }
         #region//チーム
         if (Inning2 == 0&&Wait==false&&gameset==false)
@@ -511,6 +521,23 @@ public class GameTextes : MonoBehaviour
         {
             Runner = 2;
         }
+
+        #region//チェンジ処理
+        if (change == true&&gameset==false&&1<min)
+        {
+            ChangeText.text = string.Format("攻守交代");
+            CText.gameObject.SetActive(true);
+        }
+        if (change == true && gameset == true)
+        {
+            ChangeText.text = string.Format("試合終了　Enterキーでタイトルに戻る");
+            CText.gameObject.SetActive(true);
+        }
+        if (change == false)
+        {
+            CText.gameObject.SetActive(false);
+        }
+        #endregion
 
         //試合終了判定
         if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) /*|| AtkPt - DefPt <= -10*/)

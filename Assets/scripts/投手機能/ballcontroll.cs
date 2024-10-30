@@ -6,6 +6,7 @@ using UnityEngine;
 public class ballcontroll : MonoBehaviour
 {
     public Bomb exp;
+    public GameObject bomb;
     public bool hitBomb = false;
     public float timer = 0.0f;
     public GameTextes gamas;//試合関連スクリプト
@@ -27,9 +28,9 @@ public class ballcontroll : MonoBehaviour
         float z = Random.RandomRange(5.0f, 7.0f);
         float timeLimit = Random.RandomRange(0.8f, 1.2f);
         //投球動作
-        if (((timer > timeLimit) & shootSwitch)&gamas.gameset==false&&gamas.change==false&&gamas.Wait==false)
+        if (((timer > timeLimit) & shootSwitch) & gamas.gameset == false && gamas.change == false && gamas.Wait == false)
         {
-           
+
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             rigidbody.AddForce(0, 0, -z);
 
@@ -37,9 +38,9 @@ public class ballcontroll : MonoBehaviour
             shootSwitch = false;
             pitch = true;
         }
-        else if (((timer > timeLimit*2) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)
+        else if (((timer > timeLimit * 2) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)
         {
-            
+
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             rigidbody.AddForce(0, 0, -z);
 
@@ -48,6 +49,10 @@ public class ballcontroll : MonoBehaviour
             gamas.change = false;
             pitch = true;
         }
+        if (pitch == false)
+        {
+            bomb.SetActive(true);
+        } 
 
         if (shootSwitch)
         {
@@ -67,11 +72,14 @@ public class ballcontroll : MonoBehaviour
             BatAudio.PlayOneShot(BatSE);
             hitBomb = true;
         }
-
-
         else if (collision.gameObject.tag == "Bat")
         {
             BatAudio.PlayOneShot(BatSE);
+            pitch = false;
+
+        }
+        else if (collision.gameObject.tag == "Strike")
+        {
             pitch = false;
 
         }
@@ -79,5 +87,5 @@ public class ballcontroll : MonoBehaviour
 
 
     }
-    
+
 }
