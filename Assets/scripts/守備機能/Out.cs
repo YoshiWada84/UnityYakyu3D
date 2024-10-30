@@ -56,12 +56,12 @@ public class Out : MonoBehaviour
 
         if (gamas.Inning2 == 0 && Input.GetMouseButton(0) && time_def >0)
         {
-            transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 1);
+            transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 5);
             time_def--;
         }
         if (gamas.Inning2 == 1 && Input.GetKey(KeyCode.Space) &&time_def>0) 
         {
-            transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 1);
+            transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 5);
             time_def--;
         }
         
