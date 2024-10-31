@@ -168,7 +168,14 @@ public class GameTextes : MonoBehaviour
         {
             bat1.gameObject.SetActive(true);
             bat2.gameObject.SetActive(false);
-            InningText.text = string.Format("{0}回表", Inning);
+            if (3 < Inning)
+            {
+                InningText.text = string.Format("延長{0}回表", Inning);
+            }
+            else
+            {
+                InningText.text = string.Format("{0}回表", Inning);
+            }
             BGM2.gameObject.SetActive(true);
             BGM1.gameObject.SetActive(false);
             BGM3.gameObject.SetActive(false);
@@ -180,7 +187,14 @@ public class GameTextes : MonoBehaviour
         {
             bat1.gameObject.SetActive(false);
             bat2.gameObject.SetActive(true);
-            InningText.text = string.Format("{0}回裏", Inning);
+            if (3 < Inning)
+            {
+                InningText.text = string.Format("延長{0}回裏", Inning);
+            }
+            else
+            {
+                InningText.text = string.Format("{0}回裏", Inning);
+            }
             BGM3.gameObject.SetActive(true);
             BGM1.gameObject.SetActive(false);
             BGM2.gameObject.SetActive(false);
@@ -517,10 +531,10 @@ public class GameTextes : MonoBehaviour
 
         #region//試合終了判定、タイブレーク処理
         //タイブレーク
-        if (4 <= Inning && change == true)
-        {
-            Runner = 2;
-        }
+        //if (4 <= Inning && change == true)
+        //{
+        //    Runner = 2;
+        //}
 
         #region//チェンジ処理
         if (change == true&&gameset==false&&1<min)

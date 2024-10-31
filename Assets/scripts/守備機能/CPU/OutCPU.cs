@@ -33,11 +33,13 @@ public class OutCPU : MonoBehaviour
         OPText.text = string.Format("DP：{0}", time_def);
         if (gamas.Inning2==0&&gamas.change == true)
         {
-            time_def = 400;
+            //time_def = 400;//テスト版
+            time_def = 100;
         }
         if (gamas.Inning2 == 1 && gamas.change == true)
         {
-            time_def = 400;
+            //time_def = 400;//テスト版
+            time_def = 100;
         }
         if ((gamas.Team1==2&&gamas.Inning2==1) && gamas.change == true)
         {

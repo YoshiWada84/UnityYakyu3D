@@ -8,7 +8,7 @@ public class batmouse : MonoBehaviour
     public GameObject batbat;
     //public GameObject ball;
     //private int r = 10; // Rotation Speed
-    private int r = 2; // Rotation Speedテスト用
+    private int r = 1; // Rotation Speedテスト用
 
     private int r_sum = 0;
     private int r_max = 260;

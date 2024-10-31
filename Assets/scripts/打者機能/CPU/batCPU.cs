@@ -11,7 +11,7 @@ public class batCPU : MonoBehaviour
     public GameObject batbat;
     public GameObject Bomb;
     //private int r = 10; // Rotation Speed
-    private int r = 2; // Rotation Speedテスト用
+    private int r = 1; // Rotation Speedテスト用
 
     private int r_sum = 0;
     private int r_max = 260;
@@ -39,7 +39,7 @@ public class batCPU : MonoBehaviour
     {
         if (ball.pitch == false)
         {
-            rand = Random.Range(3, 12);
+            rand = Random.Range(3, 9);
         }
 
         if ((ball.transform.position.z < rand) && r_sum < r_max)

@@ -10,9 +10,9 @@ public class Out : MonoBehaviour
     public GameTextes gamas;
     private float position_x = 6;//現在位置x
     private float position_y = 4;//現在位置y
-    private float positioning_max_x = 25;//最大位置
+    private float positioning_max_x = 24;//最大位置
     private float positioning_max_y = 30;//最大位置
-    //public int time_def = 400;//テスト版
+    
     public int time_def = 100;
 
 
@@ -39,15 +39,16 @@ public class Out : MonoBehaviour
 
         if (gamas.change == true)
         {
-            time_def = 400;
+            //time_def = 400;//テスト版
+            time_def = 100;
         }
         if ((gamas.Team1 == 2 && gamas.Inning2 == 0) && gamas.change == true)
         {
-            time_def = 4000;
+            time_def = 4000;//テスト版
         }
         if ((gamas.Team2 == 2 && gamas.Inning2 == 1) && gamas.change == true)
         {
-            time_def = 4000;
+            time_def = 4000;//テスト版
         }
         if (1 <= gamas.Inning)
         {
