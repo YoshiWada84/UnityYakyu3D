@@ -79,7 +79,7 @@ namespace ExplosionSample
             // éûä‘åoâﬂå„Ç…è¡Ç∑
             yield return new WaitForSeconds(_stopSeconds);
             _effect.Stop();
-            _sfx.Stop();
+            //_sfx.Stop();
             _collider.enabled = false;
 
             Destroy(gameObject);

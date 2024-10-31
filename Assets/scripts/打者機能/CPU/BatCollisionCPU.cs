@@ -2,35 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatCollisionCPU : MonoBehaviour
+namespace ExplosionSample
 {
-    //private float bounce = 10f;
-    public ballcontroll ball;
-    public batCPU bat;
-    public GameObject batbat;
-    public GameTextes gamas;
-    // Start is called before the first frame update
-    void Start()
+    public class BatCollisionCPU : MonoBehaviour
     {
-        
-    }
+        [Header("”š•—‚ÌPrefab")] [SerializeField] private Explosion _explosionPrefab;
+        //private float bounce = 10f;
+        public ballcontroll ball;
+        public batCPU bat;
+        public GameObject batbat;
+        public GameTextes gamas;
+        // Start is called before the first frame update
+        void Start()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ball"&&ball.hitBomb==false&&((gamas.Runner+1>gamas.AtkPt-gamas.DefPt&&3<=gamas.Inning)||gamas.Out==2))
-        {
-            bat.hit = true;
-            ball.hitBomb = true;
         }
-        else if (collision.gameObject.tag == "Ball")
+
+        // Update is called once per frame
+        void Update()
         {
-            bat.hit = true;
-            
+
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "Ball" && ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 3 <= gamas.Inning) || gamas.Out == 2))
+            {
+                bat.hit = true;
+                ball.hitBomb = true;
+            }
+            else if (collision.gameObject.tag == "Ball")
+            {
+                bat.hit = true;
+                // ”š”­‚ð¶¬
+                var explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+                explosion.Explode();
+            }
         }
     }
 }
