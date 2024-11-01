@@ -10,8 +10,8 @@ public class Out : MonoBehaviour
     public GameTextes gamas;
     private float position_x = 6;//現在位置x
     private float position_y = 4;//現在位置y
-    private float positioning_max_x = 24;//最大位置
-    private float positioning_max_y = 30;//最大位置
+    private float positioning_max_x = 20;//最大位置
+    private float positioning_max_y = 50;//最大位置
     
     public int time_def = 100;
 
@@ -39,7 +39,7 @@ public class Out : MonoBehaviour
 
         if (gamas.change == true)
         {
-            //time_def = 400;//テスト版
+            //time_def = 40000;//テスト版
             time_def = 100;
         }
         if ((gamas.Team1 == 2 && gamas.Inning2 == 0) && gamas.change == true)
@@ -54,15 +54,26 @@ public class Out : MonoBehaviour
         {
             transform.localScale = new Vector3(position_x, position_y, 1);
         }
-
-        if (gamas.Inning2 == 0 && Input.GetMouseButton(0) && time_def >0)
+        
+        if (gamas.Inning2 == 0 && Input.GetMouseButton(0)&& Input.GetMouseButton(1) && time_def > 0)
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 5);
+            time_def-=2;
+        }
+        else if (gamas.Inning2 == 0 && Input.GetMouseButton(0) && time_def >0)
+        {
+            transform.localScale = new Vector3(position_x*2, position_y*2, 5);
             time_def--;
         }
-        if (gamas.Inning2 == 1 && Input.GetKey(KeyCode.Space) &&time_def>0) 
+        if (gamas.Inning2 == 1 && Input.GetKey(KeyCode.Space)&& Input.GetKey(KeyCode.A) && time_def > 0)
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 5);
+            time_def-=2;
+        }
+
+        else if (gamas.Inning2 == 1 && Input.GetKey(KeyCode.Space) &&time_def>0) 
+        {
+            transform.localScale = new Vector3(position_x*2, position_y, 5);
             time_def--;
         }
         

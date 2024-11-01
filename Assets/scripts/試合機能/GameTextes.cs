@@ -117,17 +117,17 @@ public class GameTextes : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Alpha3))
             {
-                Team1 = 1;
-                Team2 = 0;
-                Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
+                Team1 = 0;
+                Team2 = 3;
+                Ground1.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
                 
 
             }
             else if (Input.GetKey(KeyCode.Alpha4))
             {
                 Team1 = 1;
-                Team2 = 2;
+                Team2 = 0;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
                 
@@ -135,20 +135,45 @@ public class GameTextes : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Alpha5))
             {
-                Team1 = 2;
-                Team2 = 0;
+                Team1 = 1;
+                Team2 = 2;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
                 
             }
             else if (Input.GetKey(KeyCode.Alpha6))
             {
-                Team1 = 2;
-                Team2 = 1;
+                Team1 = 1;
+                Team2 = 3;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
                 
             }
+            else if (Input.GetKey(KeyCode.Alpha7))
+            {
+                Team1 = 2;
+                Team2 = 0;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
+
+            }
+            else if (Input.GetKey(KeyCode.Alpha8))
+            {
+                Team1 = 2;
+                Team2 = 1;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
+
+            }
+            else if (Input.GetKey(KeyCode.Alpha9))
+            {
+                Team1 = 2;
+                Team2 = 3;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
+
+            }
+
 
         }
         if (Wait == true&&Input.GetKey(KeyCode.Return))
@@ -353,6 +378,51 @@ public class GameTextes : MonoBehaviour
             }
 
         }
+        else if (Team1 == 3)
+        {
+            AttackText.text = string.Format("ポリゴンズ：{0}", AtkPt);
+            if (Inning2 == 1)
+            {
+                T1Text.text = string.Format("P　？？？");
+            }
+            if (Inning2 == 0 && Team1Batter == 1)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 2)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 3)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 4)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 5)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 6)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 7)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 8)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 0 && Team1Batter == 9)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+        }
+
         else
         {
             AttackText.text = string.Format("先攻チーム：{0}", AtkPt);
@@ -487,6 +557,50 @@ public class GameTextes : MonoBehaviour
             else if (Inning2 == 1 && Team2Batter == 9)
             {
                 T2Text.text = string.Format("{0}　さいきょうP", Team2Batter);
+            }
+        }
+        else if (Team2 == 3)
+        {
+            AttackText.text = string.Format("ポリゴンズ：{0}", AtkPt);
+            if (Inning2 == 0)
+            {
+                T1Text.text = string.Format("P　？？？");
+            }
+            if (Inning2 == 1 && Team1Batter == 1)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 2)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 3)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 4)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 5)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 6)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 7)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 8)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+            }
+            else if (Inning2 == 1 && Team1Batter == 9)
+            {
+                T1Text.text = string.Format("{0}　？？？", Team1Batter);
             }
         }
         else
