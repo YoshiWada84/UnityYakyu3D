@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class Teams : MonoBehaviour
 {
-    public Teams1 teams;
+    public GameObject a1;
+    public GameObject a2;
+    public GameObject a3;
+
     public SceneChange1P sceneChange1P;
     public SceneChange2P sceneChange2P;
     public GameObject img1;
@@ -34,24 +37,25 @@ public class Teams : MonoBehaviour
     public void OnClickStartButton()
     {
         audioSource.PlayOneShot(audio1); //Œø‰Ê‰¹‚ðˆê‰ñ‚¾‚¯–Â‚ç‚·
-        if (button == false && teams.button == false)
+        if (button == false )
         {
             img1.gameObject.SetActive(true);
+            a1.SetActive(false);
+            a2.SetActive(false);
+            a3.SetActive(false);
             button = true;
+            
         }
-        else if (button == true && teams.button == false)
+        else if (button == true)
         {
             img1.gameObject.SetActive(false);
             button = false;
+            a1.SetActive(true);
+            a2.SetActive(true);
+            a3.SetActive(true);
         }
-        else if (button == false && teams.button == true)
-        {
-            img1.gameObject.SetActive(true);
-            teams.img1.gameObject.SetActive(false);
+        
 
-            teams.button = false;
-            button = true;
-        }
 
     }
 }

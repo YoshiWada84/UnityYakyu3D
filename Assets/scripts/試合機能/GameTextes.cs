@@ -42,6 +42,7 @@ public class GameTextes : MonoBehaviour
     public int min = 0;         //分
     public int sec = 0;         //秒
 
+    public int hithit = 0;
 
     public int Inning;      //回数
     public int Inning2;     //表裏
@@ -80,7 +81,7 @@ public class GameTextes : MonoBehaviour
         Team2Batter = 1;
         gameset = false;
         change = false;
-        Wait = true;
+        Wait = true; 
         Ground1.gameObject.SetActive(true);
         Ground2.gameObject.SetActive(false);
 
@@ -105,7 +106,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 1;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
-                
+
             }
             else if (Input.GetKey(KeyCode.Alpha2))
             {
@@ -113,7 +114,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 2;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
-                
+
             }
             else if (Input.GetKey(KeyCode.Alpha3))
             {
@@ -121,33 +122,36 @@ public class GameTextes : MonoBehaviour
                 Team2 = 3;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
-                
+
 
             }
             else if (Input.GetKey(KeyCode.Alpha4))
             {
                 Team1 = 1;
                 Team2 = 0;
-                Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
-                
+                Ground1.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
+
+
 
             }
             else if (Input.GetKey(KeyCode.Alpha5))
             {
                 Team1 = 1;
                 Team2 = 2;
-                Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
-                
+                Ground1.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
+
+
             }
             else if (Input.GetKey(KeyCode.Alpha6))
             {
                 Team1 = 1;
                 Team2 = 3;
-                Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
-                
+                Ground1.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
+
+
             }
             else if (Input.GetKey(KeyCode.Alpha7))
             {
@@ -167,16 +171,30 @@ public class GameTextes : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Alpha9))
             {
-                Team1 = 2;
-                Team2 = 3;
+                Team1 = 3;
+                Team2 = 0;
                 Ground1.gameObject.SetActive(false);
                 Ground2.gameObject.SetActive(true);
 
             }
+            else if (Input.GetKey(KeyCode.Alpha0))
+            {
+                Team1 = 3;
+                Team2 = 1;
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
+
+            }
+            else if (Input.GetKey(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("Title");
+
+            }
+
 
 
         }
-        if (Wait == true&&Input.GetKey(KeyCode.Return))
+            if (Wait == true&&Input.GetKey(KeyCode.Return))
         {
             Wait = false;
             change = true;
@@ -224,25 +242,9 @@ public class GameTextes : MonoBehaviour
             BGM1.gameObject.SetActive(false);
             BGM2.gameObject.SetActive(false);
             BGM4.gameObject.SetActive(false);
-            if (Team1 == 0)
-            {
-                T1Text.text = string.Format("P　ざき");
-            }
-            else if (Team1 == 1)
-            {
-                T1Text.text = string.Format("P　こま");
-
-            }
-            else if (Team1 == 2)
-            {
-                T1Text.text = string.Format("P　さわむら");
-
-            }
-            else
-            {
-                T1Text.text = string.Format("P　選手名");
-            }
+            
         }
+        
         if (Team1 == 0)
         {
             AttackText.text = string.Format("たいがーす：{0}", AtkPt);
@@ -385,6 +387,7 @@ public class GameTextes : MonoBehaviour
             {
                 T1Text.text = string.Format("P　？？？");
             }
+            
             if (Inning2 == 0 && Team1Batter == 1)
             {
                 T1Text.text = string.Format("{0}　？？？", Team1Batter);
@@ -561,46 +564,46 @@ public class GameTextes : MonoBehaviour
         }
         else if (Team2 == 3)
         {
-            AttackText.text = string.Format("ポリゴンズ：{0}", AtkPt);
+            DeffenceText.text = string.Format("ポリゴンズ：{0}", AtkPt);
             if (Inning2 == 0)
             {
-                T1Text.text = string.Format("P　？？？");
+                T2Text.text = string.Format("P　？？？");
             }
-            if (Inning2 == 1 && Team1Batter == 1)
+            if (Inning2 == 1 && Team2Batter == 1)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 2)
+            else if (Inning2 == 1 && Team2Batter == 2)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 3)
+            else if (Inning2 == 1 && Team2Batter == 3)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 4)
+            else if (Inning2 == 1 && Team2Batter == 4)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 5)
+            else if (Inning2 == 1 && Team2Batter == 5)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 6)
+            else if (Inning2 == 1 && Team2Batter == 6)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 7)
+            else if (Inning2 == 1 && Team2Batter == 7)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 8)
+            else if (Inning2 == 1 && Team2Batter == 8)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
-            else if (Inning2 == 1 && Team1Batter == 9)
+            else if (Inning2 == 1 && Team2Batter == 9)
             {
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T2Text.text = string.Format("{0}　？？？", Team2Batter);
             }
         }
         else
