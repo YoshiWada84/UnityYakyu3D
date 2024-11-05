@@ -55,6 +55,7 @@ public class ballcontroll : MonoBehaviour
 
         if (shootSwitch)
         {
+            gamas.hithit = 0;
             timer += Time.deltaTime;
         }
         
