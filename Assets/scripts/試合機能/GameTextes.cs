@@ -14,8 +14,16 @@ public class GameTextes : MonoBehaviour
     public GameObject Runner2;//ランナー
     public GameObject Runner3;//ランナー
 
+    public GameObject Runner4;//ランナー
+    public GameObject Runner5;//ランナー
+    public GameObject Runner6;//ランナー
+
     public GameObject Ground1;//グラウンド1
     public GameObject Ground2;//グラウンド2
+
+    public GameObject Def1;//守備オブジェクト1
+    public GameObject Def2;//守備オブジェクト2
+
 
     public GameObject CText;//チェンジテキスト
 
@@ -86,6 +94,8 @@ public class GameTextes : MonoBehaviour
         Wait = true; 
         Ground1.gameObject.SetActive(true);
         Ground2.gameObject.SetActive(false);
+        Def1.gameObject.SetActive(true);
+        Def2.gameObject.SetActive(true);
 
         CText.gameObject.SetActive(true);
 
@@ -213,6 +223,7 @@ public class GameTextes : MonoBehaviour
         #region//チーム
         if (Inning2 == 0&&Wait==false&&gameset==false)
         {
+            
             bat1.gameObject.SetActive(true);
             bat2.gameObject.SetActive(false);
             if (3 < Inning)
@@ -616,34 +627,91 @@ public class GameTextes : MonoBehaviour
         }
         #endregion
         #region//ランナー
-
-        if (Runner == 0)
+        if (Inning2 == 0)
         {
-            Runner1.SetActive(false);
-            Runner2.SetActive(false);
-            Runner3.SetActive(false);
-            RunnerText.text = string.Format("ランナーなし");
+            if (Runner == 0)
+            {
+                Runner1.SetActive(false);
+                Runner2.SetActive(false);
+                Runner3.SetActive(false);
+                Runner4.SetActive(false);
+                Runner5.SetActive(false);
+                Runner6.SetActive(false);
+                RunnerText.text = string.Format("ランナーなし");
+            }
+            else if (Runner == 1)
+            {
+                Runner1.SetActive(true);
+                Runner2.SetActive(false);
+                Runner3.SetActive(false);
+                Runner4.SetActive(false);
+                Runner5.SetActive(false);
+                Runner6.SetActive(false);
+                RunnerText.text = string.Format("ランナー１塁");
+            }
+            else if (Runner == 2)
+            {
+                Runner1.SetActive(true);
+                Runner2.SetActive(true);
+                Runner3.SetActive(false);
+                Runner4.SetActive(false);
+                Runner5.SetActive(false);
+                Runner6.SetActive(false);
+                RunnerText.text = string.Format("ランナー１,２塁");
+            }
+            else if (Runner == 3)
+            {
+                Runner1.SetActive(true);
+                Runner2.SetActive(true);
+                Runner3.SetActive(true);
+                Runner4.SetActive(false);
+                Runner5.SetActive(false);
+                Runner6.SetActive(false);
+                RunnerText.text = string.Format("ランナー満塁");
+            }
         }
-        else if (Runner == 1)
+        else if (Inning2 == 1)
         {
-            Runner1.SetActive(true);
-            Runner2.SetActive(false);
-            Runner3.SetActive(false);
-            RunnerText.text = string.Format("ランナー１塁");
-        }
-        else if (Runner == 2)
-        {
-            Runner1.SetActive(true);
-            Runner2.SetActive(true);
-            Runner3.SetActive(false);
-            RunnerText.text = string.Format("ランナー１,２塁");
-        }
-        else if (Runner == 3)
-        {
-            Runner1.SetActive(true);
-            Runner2.SetActive(true);
-            Runner3.SetActive(true);
-            RunnerText.text = string.Format("ランナー満塁");
+            if (Runner == 0)
+            {
+                Runner1.SetActive(false);
+                Runner2.SetActive(false);
+                Runner3.SetActive(false);
+                Runner4.SetActive(false);
+                Runner5.SetActive(false);
+                Runner6.SetActive(false);
+                RunnerText.text = string.Format("ランナーなし");
+            }
+            else if (Runner == 1)
+            {
+                Runner1.SetActive(false);
+                Runner2.SetActive(false);
+                Runner3.SetActive(false);
+                Runner4.SetActive(true);
+                Runner5.SetActive(false);
+                Runner6.SetActive(false);
+                RunnerText.text = string.Format("ランナー１塁");
+            }
+            else if (Runner == 2)
+            {
+                Runner1.SetActive(false);
+                Runner2.SetActive(false);
+                Runner3.SetActive(false);
+                Runner4.SetActive(true);
+                Runner5.SetActive(true);
+                Runner6.SetActive(false);
+                RunnerText.text = string.Format("ランナー１,２塁");
+            }
+            else if (Runner == 3)
+            {
+                Runner1.SetActive(false);
+                Runner2.SetActive(false);
+                Runner3.SetActive(false);
+                Runner4.SetActive(true);
+                Runner5.SetActive(true);
+                Runner6.SetActive(true);
+                RunnerText.text = string.Format("ランナー満塁");
+            }
         }
         #endregion
 
@@ -762,37 +830,17 @@ public class GameTextes : MonoBehaviour
         {
             ScoreText.text = string.Format("{0}回裏\n{1}　-　{2}", Inning, AtkPt, DefPt);//バックスクリーンスコア
         }
-        /*
-        if (Ball.strike == true && Ball.pitch == false&&(1<=Strike&& Strike <= 2))
+        if (Inning2 == 0&&change==false)
         {
-            CText.gameObject.SetActive(true);
-            ChangeText.text = string.Format("ストライク");
+            Def1.gameObject.SetActive(true);
+            Def2.gameObject.SetActive(false);
         }
-        if (Ball.strike == true && Ball.pitch == false && (Strike==0))
+        else if (Inning2 == 1 && change == false)
         {
-            CText.gameObject.SetActive(true);
-            ChangeText.text = string.Format("ストライク\nバッターアウト");
+            Def1.gameObject.SetActive(false);
+            Def2.gameObject.SetActive(true);
         }
-        if (Ball.out1 == true&&Ball.pitch==false&&Out<3)
-        {
-            CText.gameObject.SetActive(true);
-            ChangeText.text = string.Format("アウト");
-        }
-        if (Ball.foul == true && Ball.pitch == false)
-        {
-            CText.gameObject.SetActive(true);
-            ChangeText.text = string.Format("ファール");
-        }
-        if (Ball.hit == true && Ball.pitch == false)
-        {
-            CText.gameObject.SetActive(true);
-            ChangeText.text = string.Format("ヒット");
-        }
-        if (Ball.homerun == true && Ball.pitch == false)
-        {
-            CText.gameObject.SetActive(true);
-            ChangeText.text = string.Format("ホームラン");
-        }*/
+        
     }
     void FixedUpdate()
     {
