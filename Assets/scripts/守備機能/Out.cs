@@ -18,7 +18,7 @@ public class Out : MonoBehaviour
 
     public Text OPText;        //OPテキスト
 
-    public int currentTP=400;
+    public int currentTP=100;
     
 
     //private bool DP = false;//守備の値
