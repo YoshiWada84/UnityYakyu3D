@@ -8,6 +8,8 @@ public class Out : MonoBehaviour
     public AudioSource OutAudio;
     public AudioClip OutSE;
     public GameTextes gamas;
+
+    public ballcontroll ball;
     private float position_x = 6;//現在位置x
     private float position_y = 4;//現在位置y
     private float positioning_max_x = 20;//最大位置
@@ -42,11 +44,11 @@ public class Out : MonoBehaviour
             //time_def = 40000;//テスト版
             time_def = 100;
         }
-        if ((gamas.Team1 == 2 && gamas.Inning2 == 0) && gamas.change == true)
+        if ((gamas.Team2 == 2 && gamas.Inning2 == 0) && gamas.change == true)
         {
             time_def = 4000;//テスト版
         }
-        if ((gamas.Team2 == 2 && gamas.Inning2 == 1) && gamas.change == true)
+        if ((gamas.Team1 == 2 && gamas.Inning2 == 1) && gamas.change == true)
         {
             time_def = 4000;//テスト版
         }
@@ -84,7 +86,7 @@ public class Out : MonoBehaviour
         
         if (collision.gameObject.tag == "Ball")
         {
-
+            ball.out1 = true;
             gamas.Strike = 0;
             gamas.Out++;
             if (gamas.Inning2 == 0)
