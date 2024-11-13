@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class OutCPU : MonoBehaviour
 {
+
+    public ballcontroll ball;
     public AudioSource OutAudio;
     public AudioClip OutSE;
     public GameTextes gamas;
@@ -84,6 +86,7 @@ public class OutCPU : MonoBehaviour
        
         if (collision.gameObject.tag == "Ball")
         {
+            ball.out1 = true;
             cpus.hit = false;
             gamas.Strike=0;
             gamas.Out++;

@@ -23,6 +23,7 @@ public class GameTextes : MonoBehaviour
 
     public GameObject Ground1;//グラウンド1
     public GameObject Ground2;//グラウンド2
+    public GameObject Ground3;//グラウンド3
 
     public GameObject Def1;//守備オブジェクト1
     public GameObject Def2;//守備オブジェクト2
@@ -97,6 +98,7 @@ public class GameTextes : MonoBehaviour
         Wait = true; 
         Ground1.gameObject.SetActive(true);
         Ground2.gameObject.SetActive(false);
+        Ground3.gameObject.SetActive(false);
         Def1.gameObject.SetActive(true);
         Def2.gameObject.SetActive(true);
 
@@ -122,6 +124,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 1;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(false);
 
             }
             else if (Input.GetKey(KeyCode.Alpha2))
@@ -130,6 +133,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 2;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(false);
 
             }
             else if (Input.GetKey(KeyCode.Alpha3))
@@ -138,6 +142,7 @@ public class GameTextes : MonoBehaviour
                 Team2 = 3;
                 Ground1.gameObject.SetActive(true);
                 Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(false);
 
 
             }
@@ -145,8 +150,9 @@ public class GameTextes : MonoBehaviour
             {
                 Team1 = 1;
                 Team2 = 0;
-                Ground1.gameObject.SetActive(true);
-                Ground2.gameObject.SetActive(false);
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
+                Ground3.gameObject.SetActive(false);
 
 
 
@@ -155,18 +161,18 @@ public class GameTextes : MonoBehaviour
             {
                 Team1 = 1;
                 Team2 = 2;
-                Ground1.gameObject.SetActive(true);
-                Ground2.gameObject.SetActive(false);
-
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
+                Ground3.gameObject.SetActive(false);
 
             }
             else if (Input.GetKey(KeyCode.Alpha6))
             {
                 Team1 = 1;
                 Team2 = 3;
-                Ground1.gameObject.SetActive(true);
-                Ground2.gameObject.SetActive(false);
-
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(true);
+                Ground3.gameObject.SetActive(false);
 
             }
             else if (Input.GetKey(KeyCode.Alpha7))
@@ -174,7 +180,8 @@ public class GameTextes : MonoBehaviour
                 Team1 = 2;
                 Team2 = 0;
                 Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(true);
 
             }
             else if (Input.GetKey(KeyCode.Alpha8))
@@ -182,7 +189,8 @@ public class GameTextes : MonoBehaviour
                 Team1 = 2;
                 Team2 = 1;
                 Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(true);
 
             }
             else if (Input.GetKey(KeyCode.Alpha9))
@@ -190,7 +198,8 @@ public class GameTextes : MonoBehaviour
                 Team1 = 3;
                 Team2 = 0;
                 Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
+                Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(true);
 
             }
             else if (Input.GetKey(KeyCode.Alpha0))
@@ -198,8 +207,8 @@ public class GameTextes : MonoBehaviour
                 Team1 = 3;
                 Team2 = 1;
                 Ground1.gameObject.SetActive(false);
-                Ground2.gameObject.SetActive(true);
-
+                Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(true);
             }
             else if (Input.GetKey(KeyCode.Escape))
             {
