@@ -20,7 +20,7 @@ public class DeleteBall : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Ground" & collision.gameObject.tag != "Bat")
+        if (collision.gameObject.tag != "Ground" & collision.gameObject.tag != "Bat"& collision.gameObject.tag != "town")
         {
             //Destroy(gameObject);
             rig.velocity = Vector3.zero;
