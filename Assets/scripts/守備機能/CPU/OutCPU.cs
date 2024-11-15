@@ -35,13 +35,13 @@ public class OutCPU : MonoBehaviour
         OPText.text = string.Format("DP：{0}", time_def);
         if (gamas.Inning2==0&&gamas.change == true)
         {
-            time_def = 400;//テスト版
-            //time_def = 100;
+            //time_def = 400;//テスト版
+            time_def = 100;
         }
         if (gamas.Inning2 == 1 && gamas.change == true)
         {
-            time_def = 400;//テスト版
-            //time_def = 100;
+            //time_def = 400;//テスト版
+            time_def = 100;
         }
         if ((gamas.Team1==2&&gamas.Inning2==1) && gamas.change == true)
         {
@@ -67,7 +67,15 @@ public class OutCPU : MonoBehaviour
             transform.localScale = new Vector3(position_x*2, position_y*2, 5);
             time_def--;
         }
-        
+        if (gamas.Inning2 == 0 && time_def <= 0)
+        {
+            transform.localScale = new Vector3(position_x * 0.5f, position_y, 3);
+        }
+        else if (gamas.Inning2 == 1 && time_def <= 0)
+        {
+            transform.localScale = new Vector3(position_x * 0.5f, position_y, 3);
+        }
+
         if (gamas.Inning2 == 1 && ((Input.GetMouseButton(0)&& Input.GetMouseButton(1)) || (Input.GetKey(KeyCode.Space)&& Input.GetKey(KeyCode.A))) && time_def > 0)
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 5);

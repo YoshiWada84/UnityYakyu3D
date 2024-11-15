@@ -3,9 +3,10 @@ using System.Collections;
 
 public class DeleteBall : MonoBehaviour
 {
-
+    public GameTextes gamas;
+    public ballcontroll ball;
     private Rigidbody rig;
-
+    public int time=0;
     // Use this for initialization
     void Start()
     {
@@ -15,7 +16,18 @@ public class DeleteBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (3000 <= time||ball.strike==true || ball.foul == true || ball.out1 == true || ball.hit == true || ball.homerun == true)
+        {
+            time = 0;
+            rig.velocity = Vector3.zero;
+            rig.angularVelocity = Vector3.zero;
+            transform.position = new Vector3(0, 1, 20f);
+            ballcontroll.shootSwitch = true;
+        }
+        if (ball.pitch == false&& gamas.gameset == false && gamas.change == false && gamas.Wait == false)
+        {
+            time++;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
