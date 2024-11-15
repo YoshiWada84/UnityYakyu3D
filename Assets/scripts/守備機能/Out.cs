@@ -78,7 +78,14 @@ public class Out : MonoBehaviour
             transform.localScale = new Vector3(position_x*2, position_y, 5);
             time_def--;
         }
-        
+        if (gamas.Inning2 == 0 && time_def <= 0)
+        {
+            transform.localScale = new Vector3(position_x * 0.5f, position_y , 3);
+        }
+        else if (gamas.Inning2 == 1 && time_def <= 0)
+        {
+            transform.localScale = new Vector3(position_x * 0.5f, position_y , 3);
+        }
 
     }
     void OnCollisionEnter(Collision collision)

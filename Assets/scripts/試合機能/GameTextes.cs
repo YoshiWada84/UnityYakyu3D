@@ -64,6 +64,7 @@ public class GameTextes : MonoBehaviour
     public int Team2;       //チーム後攻
     public int Team1Batter;       //チーム先攻2
     public int Team2Batter;       //チーム後攻2
+    
 
     public int AtkPt;       //先攻チームの得点数
     public int DefPt;       //後攻チームの得点数
@@ -74,8 +75,11 @@ public class GameTextes : MonoBehaviour
     public bool change;    //攻守交替
     public bool Wait;      //チーム決め
 
+    public bool Win;      //勝
+    public bool Lose;     //敗
+
     //BGM
-    
+
 
 
     // Start is called before the first frame update
@@ -891,7 +895,7 @@ public class GameTextes : MonoBehaviour
         }
         if (change == true && gameset == true)
         {
-            sec2++;
+            
             ChangeText.text = string.Format("試合終了\n" +
                 "Spaceキーまたは左マウスでタイトルに戻る");
             CText.gameObject.SetActive(true);
@@ -903,8 +907,13 @@ public class GameTextes : MonoBehaviour
         #endregion
 
         //試合終了判定
+        if (gameset == true)
+        {
+            sec2++;
+        }
         if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || ( AtkPt - DefPt <= -7))
         {
+            gameset = true;
             InningText.text = string.Format("試合終了");
             if (Team2 == 0)
             {
@@ -923,15 +932,17 @@ public class GameTextes : MonoBehaviour
                 StrikeText.text = string.Format("後攻チームの勝ち");
             }
             OutText.text = string.Format("");
-            gameset = true;
+            
             BGM4.gameObject.SetActive(true);
             BGM1.gameObject.SetActive(false);
             BGM2.gameObject.SetActive(false);
             BGM3.gameObject.SetActive(false);
 
+            Lose = true;
         }
         else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||(Inning2==0 && change == true && AtkPt - DefPt>=7))
         {
+            gameset = true;
             InningText.text = string.Format("試合終了");
             if (Team1 == 0)
             {
@@ -951,18 +962,19 @@ public class GameTextes : MonoBehaviour
             }
 
             OutText.text = string.Format("");
-            gameset = true;
+            
             BGM4.gameObject.SetActive(true);
             BGM1.gameObject.SetActive(false);
             BGM2.gameObject.SetActive(false);
             BGM3.gameObject.SetActive(false);
 
+            Win = true;
         }
-        if (gameset == true &&300<sec2&&(Input.GetKey(KeyCode.Space)||Input.GetMouseButton(0)))
+
+        if (gameset == true && 300 < sec2 && (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)))
         {
             SceneManager.LoadScene("Title");
         }
-        
         if (gameset == false)
         {
             sec++;
