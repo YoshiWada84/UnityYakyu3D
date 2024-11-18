@@ -30,11 +30,11 @@ public class ballcontroll : MonoBehaviour
     void Update()
     {
         float z = Random.RandomRange(2.0f, 3.0f);
-        float timeLimit = Random.RandomRange(0.8f, 1.2f);
+        float timeLimit = Random.RandomRange(1.0f, 1.5f);
         //“Š‹…“®ì
         if (((timer > timeLimit) & shootSwitch) & gamas.gameset == false && gamas.change == false && gamas.Wait == false)
         {
-
+            bomb.SetActive(true);
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             rigidbody.AddForce(0, 0, -z);
 
@@ -50,7 +50,7 @@ public class ballcontroll : MonoBehaviour
         }
         else if (((timer > timeLimit * 2) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)
         {
-
+            bomb.SetActive(true);
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             rigidbody.AddForce(0, 0, -z);
 
@@ -59,10 +59,9 @@ public class ballcontroll : MonoBehaviour
             gamas.change = false;
             pitch = true;
         }
-        if (pitch == false)
-        {
-            bomb.SetActive(true);
-        } 
+        
+            
+       
 
         if (shootSwitch)
         {
@@ -93,32 +92,53 @@ public class ballcontroll : MonoBehaviour
         {
             pitch = false;
             strike = true;
+            out1 = false;
+            foul = false;
+            hit = false;
+            homerun = false;
         }
         else if (collision.gameObject.tag == "Out")
         {
 
             out1 = true;
-
+            strike = false;
+            
+            foul = false;
+            hit = false;
+            homerun = false;
 
         }
         else if (collision.gameObject.tag == "Foul")
         {
 
             foul = true;
-
+            strike = false;
+            out1 = false;
+            
+            hit = false;
+            homerun = false;
 
         }
         else if (collision.gameObject.tag == "Hit")
         {
            
             hit = true;
-            
+            strike = false;
+            out1 = false;
+            foul = false;
+           
+            homerun = false;
 
         }
         else if (collision.gameObject.tag == "Homerun")
         {
 
             homerun = true;
+            strike = false;
+            out1 = false;
+            foul = false;
+            hit = false;
+           
         }
 
 

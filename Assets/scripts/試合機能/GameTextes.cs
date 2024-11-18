@@ -888,7 +888,7 @@ public class GameTextes : MonoBehaviour
         }
 
         #region//ƒ`ƒFƒ“ƒWˆ—
-        if (change == true&&gameset==false&&1<min)
+        if (change == true&& (Strike==0||Ball.out1==true)&&gameset==false&&1<min)
         {
             ChangeText.text = string.Format("UçŒğ‘ã");
             CText.gameObject.SetActive(true);

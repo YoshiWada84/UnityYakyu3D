@@ -17,7 +17,7 @@ namespace ExplosionSample
             {
                 // ˆê’èŽžŠÔŒo‰ßŒã‚É”­‰Î
                 Invoke(nameof(Explode), 0);
-                
+                BC.pitch = false;
                
             }
             
