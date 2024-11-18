@@ -30,21 +30,25 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Q)&& Input.GetKey(KeyCode.W)&& Input.GetKey(KeyCode.E))
         {
             PlayerPrefs.DeleteAll();
-            
+            Win1 = 0;
+            Lose1 = 0;
+
+            //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
+            highScoreText.text = "勝ち: " + Win1.ToString() + "\n負け: " + Lose1.ToString();
+            //ハイスコアを表示
         }
         if (gamas.gameset == false)
         {
             unlit = true;
         }
         
-        //ハイスコアより現在スコアが高い時
+        
         if (gamas.Win==true&&unlit==true)
         {
             Win1++;
-            gamas.Win = false;
             //ハイスコア更新
 
             PlayerPrefs.SetInt(key1, Win1);
@@ -59,7 +63,6 @@ public class Score : MonoBehaviour
         else if (gamas.Lose == true && unlit == true)
         {
             Lose1++;
-            gamas.Lose = false;
             //ハイスコア更新
 
             PlayerPrefs.SetInt(key1, Win1);
@@ -71,9 +74,6 @@ public class Score : MonoBehaviour
             //ハイスコアを表示
             unlit = false;
         }
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            
-        }
+        
     }
 }
