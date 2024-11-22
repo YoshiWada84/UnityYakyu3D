@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
         // ボタンコンポーネントの取得
         BT1 = GameObject.Find("/Canvas/1P").GetComponent<Button>();
         BT2 = GameObject.Find("/Canvas/2P").GetComponent<Button>();
-        BT3 = GameObject.Find("/Canvas/大会").GetComponent<Button>();
+        BT3 = GameObject.Find("/Canvas/タイムベース").GetComponent<Button>();
         BT4 = GameObject.Find("/Canvas/クレジット").GetComponent<Button>();
         BT5 = GameObject.Find("/Canvas/試合について").GetComponent<Button>();
         BT6 = GameObject.Find("/Canvas/操作").GetComponent<Button>();

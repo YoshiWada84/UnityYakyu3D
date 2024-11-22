@@ -3204,7 +3204,7 @@ GameObject:
   - component: {fileID: 545198901}
   - component: {fileID: 545198900}
   - component: {fileID: 545198899}
-  - component: {fileID: 545198902}
+  - component: {fileID: 545198904}
   - component: {fileID: 545198903}
   m_Layer: 5
   m_Name: 2P
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 545198902}
+      - m_Target: {fileID: 545198904}
         m_TargetAssemblyTypeName: SceneChange2P, Assembly-CSharp
         m_MethodName: OnClickStartButton
         m_Mode: 1
@@ -3328,22 +3328,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545198897}
   m_CullTransparentMesh: 1
---- !u!114 &545198902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545198897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f01a4f1fb0c6b4eb6e40a03ab541f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio1: {fileID: 8300000, guid: c84611e3e243ca1438f52a861be65f7f, type: 3}
-  audioSource: {fileID: 545198903}
-  mask: {fileID: 1325753851}
-  a: 0
 --- !u!82 &545198903
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3440,6 +3424,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &545198904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545198897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937d9e7e24c525243ad4dbed1f44eb1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio1: {fileID: 8300000, guid: c84611e3e243ca1438f52a861be65f7f, type: 3}
+  audioSource: {fileID: 545198903}
+  mask: {fileID: 1325753851}
+  a: 0
 --- !u!1 &558285438
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,7 +4098,7 @@ MonoBehaviour:
   a4: {fileID: 1947507745}
   a5: {fileID: 481879288}
   sceneChange1P: {fileID: 2104661488}
-  sceneChange2P: {fileID: 545198902}
+  sceneChange2P: {fileID: 0}
   img1: {fileID: 567586614}
   audio1: {fileID: 8300000, guid: fcbd2a5cf4a9eba49b0b4dccf139902b, type: 3}
   audioSource: {fileID: 586795945}
@@ -5519,7 +5519,7 @@ MonoBehaviour:
   a4: {fileID: 1947507745}
   a5: {fileID: 481879288}
   sceneChange1P: {fileID: 2104661488}
-  sceneChange2P: {fileID: 545198902}
+  sceneChange2P: {fileID: 0}
   img1: {fileID: 1965000257}
   audio1: {fileID: 8300000, guid: fcbd2a5cf4a9eba49b0b4dccf139902b, type: 3}
   audioSource: {fileID: 826364688}
@@ -6813,9 +6813,10 @@ GameObject:
   - component: {fileID: 1200298757}
   - component: {fileID: 1200298756}
   - component: {fileID: 1200298755}
+  - component: {fileID: 1200298758}
   - component: {fileID: 1200298754}
   m_Layer: 5
-  m_Name: "\u5927\u4F1A"
+  m_Name: "\u30BF\u30A4\u30E0\u30D9\u30FC\u30B9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6982,8 +6983,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneChange2P, Assembly-CSharp
+      - m_Target: {fileID: 1200298758}
+        m_TargetAssemblyTypeName: SceneChangeTB, Assembly-CSharp
         m_MethodName: OnClickStartButton
         m_Mode: 1
         m_Arguments:
@@ -7032,6 +7033,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200298752}
   m_CullTransparentMesh: 1
+--- !u!114 &1200298758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200298752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c231bfe96c564b4f9f1b5399fe7c7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio1: {fileID: 8300000, guid: c84611e3e243ca1438f52a861be65f7f, type: 3}
+  audioSource: {fileID: 1200298754}
+  mask: {fileID: 1325753851}
+  a: 0
 --- !u!1 &1202083588
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,7 +7694,7 @@ MonoBehaviour:
   a4: {fileID: 1947507745}
   a5: {fileID: 481879288}
   sceneChange1P: {fileID: 2104661488}
-  sceneChange2P: {fileID: 545198902}
+  sceneChange2P: {fileID: 0}
   img1: {fileID: 126173801}
   audio1: {fileID: 8300000, guid: fcbd2a5cf4a9eba49b0b4dccf139902b, type: 3}
   audioSource: {fileID: 1248881548}
@@ -8374,7 +8391,7 @@ MonoBehaviour:
   a4: {fileID: 1947507745}
   a5: {fileID: 481879288}
   sceneChange1P: {fileID: 2104661488}
-  sceneChange2P: {fileID: 545198902}
+  sceneChange2P: {fileID: 0}
   img1: {fileID: 1430394803}
   audio1: {fileID: 8300000, guid: fcbd2a5cf4a9eba49b0b4dccf139902b, type: 3}
   audioSource: {fileID: 1310142766}
