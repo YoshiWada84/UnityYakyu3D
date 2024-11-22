@@ -8,8 +8,7 @@ public class SceneChange2P : MonoBehaviour
     public AudioClip audio1;
     public AudioSource audioSource; //オーディオソース    
     public GameObject mask;
-
-    public bool a = false;
+    public bool a=false;
     public void Start()
     {
         audioSource = this.gameObject.GetComponent<AudioSource>(); //オーディオソース取得
@@ -19,6 +18,7 @@ public class SceneChange2P : MonoBehaviour
         if (a == false)
         {
             audioSource.PlayOneShot(audio1);
+            a = true;
             mask = GameObject.Find("RawImage");
 
             //画面全体に広げる
