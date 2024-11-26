@@ -10,6 +10,7 @@ public class Teams : MonoBehaviour
     public GameObject a3;
     public GameObject a4;
     public GameObject a5;
+    public GameObject a6;
 
     public SceneChange1P sceneChange1P;
     public SceneChange2P sceneChange2P;
@@ -32,13 +33,14 @@ public class Teams : MonoBehaviour
             img1.gameObject.SetActive(false);
             a4.SetActive(false);
             a5.SetActive(false);
-
+            a6.SetActive(false);
         }
         if (sceneChange2P.a == true)
         {
             img1.gameObject.SetActive(false);
             a4.SetActive(false);
             a5.SetActive(false);
+            a6.SetActive(false);
 
         }
     }
@@ -53,6 +55,8 @@ public class Teams : MonoBehaviour
             a3.SetActive(false);
             a4.SetActive(false);
             a5.SetActive(false);
+            a6.SetActive(false);
+
             button = true;
             
         }
@@ -65,6 +69,7 @@ public class Teams : MonoBehaviour
             a3.SetActive(true);
             a4.SetActive(true);
             a5.SetActive(true);
+            a6.SetActive(true);
 
         }
 
