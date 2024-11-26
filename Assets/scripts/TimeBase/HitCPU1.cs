@@ -7,9 +7,11 @@ public class HitCPU1 : MonoBehaviour
     public AudioSource HitAudio;
     public AudioClip HitSE;
     public GameTimeBase gamas;
+    public ballcontroll1 ball;
 
     public batTBCPU cpus;
     public batTBCPU1 cpus2;
+    private bool un = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,12 @@ public class HitCPU1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball"||ball.hit==true)
         {
             cpus.hit = false;
             cpus2.hit = false;

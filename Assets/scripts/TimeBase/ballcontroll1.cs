@@ -31,7 +31,7 @@ public class ballcontroll1 : MonoBehaviour
     void Update()
     {
         float z = Random.RandomRange(2.0f, 3.0f);
-        float timeLimit = Random.RandomRange(1.0f, 1.5f);
+        float timeLimit = Random.RandomRange(0.5f, 1.5f);
         //“Š‹…“®ì
         if (((timer > timeLimit) & shootSwitch) & gamas.gameset == false && gamas.change == false && gamas.Wait == false)
         {

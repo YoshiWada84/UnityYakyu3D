@@ -940,7 +940,7 @@ public class GameTextes : MonoBehaviour
 
             Lose = true;
         }
-        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||(Inning2==0 && change == true && AtkPt - DefPt>=7))
+        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||(Inning2==0 && change == true && AtkPt - DefPt>=7)|| AtkPt - DefPt >= 10)
         {
             gameset = true;
             InningText.text = string.Format("‡I—¹");

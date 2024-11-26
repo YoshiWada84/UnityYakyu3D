@@ -379,7 +379,7 @@ public class GameTimeBase : MonoBehaviour
         }
         else if (Team1 == 2)
         {
-            AttackText.text = string.Format("ゴスペラーズ：{0}", AtkPt);
+            AttackText.text = string.Format("ゴリラーズ：{0}", AtkPt);
             if (Inning2 == 1)
             {
                 T1Text.text = string.Format("P　さいきょうP");
@@ -634,7 +634,7 @@ public class GameTimeBase : MonoBehaviour
         }
         else if (Team2 == 2)
         {
-            DeffenceText.text = string.Format("ゴスペラーズ：{0}", DefPt);
+            DeffenceText.text = string.Format("ゴリラーズ：{0}", DefPt);
             if (Inning2 == 0)
             {
                 T2Text.text = string.Format("P　さいきょうP");
@@ -854,7 +854,7 @@ public class GameTimeBase : MonoBehaviour
             }
             else if (Team2 == 2)
             {
-                StrikeText.text = string.Format("ゴスペラーズの勝ち");
+                StrikeText.text = string.Format("ゴリラーズの勝ち");
             }
             else
             {
@@ -869,7 +869,7 @@ public class GameTimeBase : MonoBehaviour
 
             Lose = true;
         }
-        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||(Inning2==0 && change == true && AtkPt - DefPt>=7))
+        else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||(Inning2==0 && change == true && AtkPt - DefPt>=7)|| AtkPt - DefPt >= 10)
         {
             gameset = true;
             InningText.text = string.Format("試合終了");
@@ -883,7 +883,7 @@ public class GameTimeBase : MonoBehaviour
             }
             else if (Team1 == 2)
             {
-                StrikeText.text = string.Format("ゴスペラーズの勝ち");
+                StrikeText.text = string.Format("ゴリラーズの勝ち");
             }
             else
             {
