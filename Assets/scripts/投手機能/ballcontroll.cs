@@ -18,6 +18,9 @@ public class ballcontroll : MonoBehaviour
     public bool foul = false;
     public bool hit = false;
     public bool homerun = false;
+
+
+    public bool hitter = false;//baghantei
     // Use this for initialization
     void Start()
     {
@@ -41,7 +44,7 @@ public class ballcontroll : MonoBehaviour
             timer = 0.0f;
             shootSwitch = false;
             pitch = true;
-            
+
             strike = false;
             out1 = false;
             foul = false;
@@ -59,8 +62,15 @@ public class ballcontroll : MonoBehaviour
             gamas.change = false;
             pitch = true;
         }
-        
-            
+        else
+        {
+            pitch = false;
+        }
+
+        if (strike == true || out1 == true || foul == true || hit == true || homerun == true)
+        {
+            hitter = false;
+        }
        
 
         if (shootSwitch)
@@ -74,18 +84,18 @@ public class ballcontroll : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bat"&&((Input.GetKey(KeyCode.A)&&gamas.Inning2==0)))
         {
-            
+            hitter = true;
             hitBomb = true;
         }
         if (collision.gameObject.tag == "Bat" && ((Input.GetMouseButton(1) && gamas.Inning2 == 1)))
         {
-            
+            hitter = true;
             hitBomb = true;
         }
         else if (collision.gameObject.tag == "Bat")
         {
-           
-            pitch = false;
+            hitter = true;
+            //pitch = false;
 
         }
         else if (collision.gameObject.tag == "Strike")

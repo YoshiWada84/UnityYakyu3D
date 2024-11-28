@@ -19,7 +19,12 @@ public class ballcontroll1 : MonoBehaviour
     public bool foul = false;
     public bool hit = false;
     public bool homerun = false;
-    // Use this for initialization
+
+    public bool hitter = false;//baghantei
+
+    public float z = 0;
+    public float timeLimit = 0;
+    // Use float timeLimitthis for initialization
     void Start()
     {
         
@@ -30,8 +35,8 @@ public class ballcontroll1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float z = Random.RandomRange(2.0f, 3.0f);
-        float timeLimit = Random.RandomRange(0.5f, 1.5f);
+        z = Random.RandomRange(2.0f, 3.0f);
+        timeLimit = Random.RandomRange(0.5f, 1.5f);
         //“Š‹…“®ì
         if (((timer > timeLimit) & shootSwitch) & gamas.gameset == false && gamas.change == false && gamas.Wait == false)
         {
@@ -60,9 +65,18 @@ public class ballcontroll1 : MonoBehaviour
             gamas.change = false;
             pitch = true;
         }
-        
-            
-       
+        else
+        {
+            pitch = false;
+        }
+
+        if (strike == true || out1 == true || foul == true || hit == true || homerun == true)
+        {
+            hitter = false;
+        }
+
+
+
 
         if (shootSwitch)
         {
@@ -75,18 +89,18 @@ public class ballcontroll1 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bat"&&((Input.GetKey(KeyCode.A)&&gamas.Inning2==0)))
         {
-            
+            hitter = true;
             hitBomb = true;
         }
         if (collision.gameObject.tag == "Bat" && ((Input.GetMouseButton(1) && gamas.Inning2 == 1)))
         {
-            
+            hitter = true;
             hitBomb = true;
         }
         else if (collision.gameObject.tag == "Bat")
         {
-           
-            pitch = false;
+            hitter = true;
+            //pitch = false;
 
         }
         else if (collision.gameObject.tag == "Strike")
