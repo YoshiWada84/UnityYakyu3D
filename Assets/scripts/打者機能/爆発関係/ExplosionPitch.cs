@@ -53,7 +53,7 @@ namespace ExplosionSample
 
         private IEnumerator ExplodeCoroutine()
         {
-            // 指定秒数が経過するまでFixedUpdate上で待つ
+            
             var delayCount = Mathf.Max(0, _startDelaySeconds);
             while (delayCount > 0)
             {
@@ -61,10 +61,10 @@ namespace ExplosionSample
                 delayCount -= Time.fixedDeltaTime;
             }
 
-            // 時間経過したらコライダを有効化して爆発の当たり判定が出る
-            _collider.enabled = true;
+            
+            _collider.enabled = true;//当たり判定 on
 
-            // 一定フレーム数有効化
+            // フレーム数有効化
             for (var i = 0; i < _durationFrameCount; i++)
             {
                 yield return new WaitForFixedUpdate();
@@ -88,20 +88,6 @@ namespace ExplosionSample
         /// <summary>
         /// 爆風にヒットしたときに相手をふっとばす処理
         /// </summary>
-        private void OnTriggerEnter(Collider other)
-        {
-            // 衝突対象がRigidbodyの配下であるかを調べる
-            var rigidBody = other.GetComponentInParent<Rigidbody>();
-
-            // Rigidbodyがついてないなら吹っ飛ばないの終わり
-            if (rigidBody == null) return;
-
-            // 爆風によって爆発中央から吹き飛ぶ方向のベクトルを作る
-            var direction = (other.transform.position - transform.position).normalized;
-
-            // 吹っ飛ばす
-            // ForceModeを変えると挙動が変わる（今回は質量無視）
-            rigidBody.AddForce(direction * _futtobiPower, ForceMode.VelocityChange);
-        }
+        
     }
 }

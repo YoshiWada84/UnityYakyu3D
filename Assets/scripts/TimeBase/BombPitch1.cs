@@ -5,22 +5,22 @@ namespace ExplosionSample
 {
     public class BombPitch1 : MonoBehaviour
     {
-        
-        [Header("”š•—‚ÌPrefab")] [SerializeField] private ExplosionPitch _explosionPrefab;
+        [Header("”š•—‚ÌPrefab")][SerializeField] private ExplosionPitch _explosionPrefab;
         public ballcontroll1 BC;
         private GameTextes gamas;
-       
+        public bool bomberman = false;
+
 
         void Update()
         {
-            if (BC.pitch == true)
+            if (ballcontroll1.shootSwitch == false && BC.pitch == false && BC.hitter == false)
             {
                 // ˆê’èŽžŠÔŒo‰ßŒã‚É”­‰Î
                 Invoke(nameof(Explode), 0);
-                BC.pitch = false;
-               
+                BC.pitch = true;
             }
-            
+
+
         }
 
         private void Explode()
