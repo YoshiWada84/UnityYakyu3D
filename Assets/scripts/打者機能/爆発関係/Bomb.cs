@@ -6,7 +6,7 @@ namespace ExplosionSample
     public class Bomb : MonoBehaviour
     {
         
-        [Header("”š•—‚ÌPrefab")] [SerializeField] private Explosion _explosionPrefab;
+        [Header("”š•—‚ÌPrefab")] [SerializeField] private Explosion1 _explosionPrefab;
         public ballcontroll BC;
         private GameTextes gamas;
        

@@ -28,13 +28,14 @@ namespace ExplosionSample
 
         [SerializeField] private SphereCollider _collider;
 
+        
         private void Awake()
         {
             _effect.Stop();
             _sfx.Stop();
             _collider.enabled = false;
         }
-
+       
         /// <summary>
         /// ”š”j‚·‚é
         /// </summary>

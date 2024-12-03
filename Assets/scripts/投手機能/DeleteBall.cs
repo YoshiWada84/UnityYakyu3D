@@ -14,7 +14,7 @@ public class DeleteBall : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        HitAudio = gameObject.GetComponent<AudioSource>();
+        //HitAudio = gameObject.GetComponent<AudioSource>();
         rig = this.GetComponent<Rigidbody>();
     }
 

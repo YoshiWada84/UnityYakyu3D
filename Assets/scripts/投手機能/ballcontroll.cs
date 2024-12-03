@@ -2,6 +2,7 @@ using ExplosionSample;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class ballcontroll : MonoBehaviour
 {
@@ -82,6 +83,7 @@ public class ballcontroll : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.tag == "Bat"&&((Input.GetKey(KeyCode.A)&&gamas.Inning2==0)))
         {
             hitter = true;
