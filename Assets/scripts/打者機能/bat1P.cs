@@ -6,7 +6,7 @@ public class bat1P : MonoBehaviour
 {
     public GameTextes gamas;//試合関連スクリプト
     public GameObject batbat;
-
+    
     //private int r = 10; // Rotation Speed
     private int r = 1; // Rotation Speedテスト用
 
@@ -43,5 +43,5 @@ public class bat1P : MonoBehaviour
 
 
     }
-
+    
 }

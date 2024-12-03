@@ -21,7 +21,7 @@ public class DeleteBall1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (3000 <= time)
+        if (500 <= time)
         {
             time = 0;
             HitAudio.Stop();
