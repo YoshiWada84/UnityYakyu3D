@@ -36,24 +36,15 @@ public class OutCPU : MonoBehaviour
     void Update()
     {
         OPText.text = string.Format("DP：{0}", time_def);
-        if (gamas.Inning2 == 0 && gamas.change == true)
+        
+        if (gamas.change == true)
         {
-            //time_def = 400;//テスト版
             time_def = 100;
         }
-        if (gamas.Inning2 == 1 && gamas.change == true)
-        {
-            //time_def = 400;//テスト版
-            time_def = 100;
-        }
-        if ((gamas.Team1 == 2 && gamas.Inning2 == 1) && gamas.change == true)
-        {
-            time_def = 4000;
-        }
-        if ((gamas.Team2 == 2 && gamas.Inning2 == 0) && gamas.change == true)
-        {
-            time_def = 4000;
-        }
+
+
+
+
         if (1 <= gamas.Inning)
         {
             transform.localScale = new Vector3(position_x, position_y, 1);
