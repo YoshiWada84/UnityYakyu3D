@@ -13,6 +13,9 @@ public class bat : MonoBehaviour
     private int r_sum = 0;
     private int r_max = 260;
 
+    public GameObject batbatCC;//色替え
+
+    public ballcontroll BC;
     //public GameObject Bomb;
 
     // Start is called before the first frame update
@@ -38,15 +41,12 @@ public class bat : MonoBehaviour
         {
             transform.Rotate(0, r, 0);
             r_sum -= r;
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.red;
         }
-        /*if (Input.GetKey(KeyCode.Alpha0))
+        if (Input.GetKey(KeyCode.A) && BC.hitBomb == false)
         {
-            gamas.Runner = 3;
-            Bomb.SetActive(true);
-        }*/
-
-        // Debug.Log("強スイングが選択されました。");
-
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+        }
 
     }
 

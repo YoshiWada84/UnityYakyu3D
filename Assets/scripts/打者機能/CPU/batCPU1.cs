@@ -10,6 +10,7 @@ public class batCPU1 : MonoBehaviour
     public ballcontroll ball;
     public GameObject batbat;
     public GameObject Bomb;
+    public GameObject batbatCC;//色替え
     private int r = -10; // Rotation Speed
     //private int r = -1; // Rotation Speedテスト用
 
@@ -28,6 +29,8 @@ public class batCPU1 : MonoBehaviour
     //public float swingATP = 3.0f;//スイングアビリティ
    
     public int rand;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -56,16 +59,16 @@ public class batCPU1 : MonoBehaviour
             transform.Rotate(0, r, 0);
             r_sum -= r;
             if (TargetObject == null) return;
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.blue;
 
-            
         }
 
-        if (Input.GetMouseButton(1))
-        {
-            Bomb.SetActive(true);
-        }
         
 
+        if (ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 3 <= gamas.Inning) || gamas.Out == 2) && -20 < r_sum)
+        {
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+        }
 
 
     }

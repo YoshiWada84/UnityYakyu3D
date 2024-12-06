@@ -89,11 +89,6 @@ public class ballcontroll : MonoBehaviour
             hitter = true;
             hitBomb = true;
         }
-        if (collision.gameObject.tag == "Bat" && ((Input.GetMouseButton(1) && gamas.Inning2 == 1)))
-        {
-            hitter = true;
-            hitBomb = true;
-        }
         else if (collision.gameObject.tag == "Bat")
         {
             hitter = true;

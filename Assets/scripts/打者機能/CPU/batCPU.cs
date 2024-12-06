@@ -28,6 +28,8 @@ public class batCPU : MonoBehaviour
     //public float swingATP = 3.0f;//スイングアビリティ
    
     public int rand;
+
+    public GameObject batbatCC;//色替え
     // Start is called before the first frame update
     void Start()
     {
@@ -56,14 +58,15 @@ public class batCPU : MonoBehaviour
             transform.Rotate(0, r, 0);
             r_sum -= r;
             if (TargetObject == null) return;
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.blue;
 
-            
         }
-
-        if (Input.GetMouseButton(1))
+        if (ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 3 <= gamas.Inning) || gamas.Out == 2)&&20<r_sum)
         {
-            Bomb.SetActive(true);
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         }
+
+        
         
 
 
