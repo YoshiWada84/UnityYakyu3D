@@ -7,6 +7,9 @@ public class bat1P1 : MonoBehaviour
     public GameTextes gamas;//試合関連スクリプト
     public GameObject batbat;
 
+    public GameObject batbatCC;//色替え
+    public ballcontroll BC;
+
     private int r = -10; // Rotation Speed
     //private int r = -1; // Rotation Speedテスト用
 
@@ -34,9 +37,15 @@ public class bat1P1 : MonoBehaviour
         {
             transform.Rotate(0, r, 0);
             r_sum -= r;
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.red;
         }
+        if (Input.GetKey(KeyCode.A) && BC.hitBomb == false)
+        {
+            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+        }
+
     }
-    
+
 
     private void FixedUpdate()
     {
