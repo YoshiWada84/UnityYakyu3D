@@ -51,14 +51,7 @@ public class Out : MonoBehaviour
             //time_def = 400;//ƒeƒXƒg”Å
             time_def = 100;
         }
-        if ((gamas.Team1 == 2 && gamas.Inning2 == 1) && gamas.change == true)
-        {
-            time_def = 4000;
-        }
-        if ((gamas.Team2 == 2 && gamas.Inning2 == 0) && gamas.change == true)
-        {
-            time_def = 4000;
-        }
+        
         if (1 <= gamas.Inning)
         {
             transform.localScale = new Vector3(position_x, position_y, 1);
@@ -99,12 +92,12 @@ public class Out : MonoBehaviour
         if ((ball.hit == true) && HPUP == false && ball.pitch == false)
         {
             HPUP = true;
-            time_def += 30;
+            time_def += 10;
         }
         if ((ball.homerun == true) && HPUP == false && ball.pitch == false)
         {
             HPUP = true;
-            time_def += 60;
+            time_def += 30;
         }
         if (ball.pitch == true)
         {
