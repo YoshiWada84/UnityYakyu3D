@@ -103,6 +103,10 @@ public class Out : MonoBehaviour
         {
             HPUP = false;
         }
+        if (time_def < 0)
+        {
+            time_def = 0;
+        }
     }
 
     

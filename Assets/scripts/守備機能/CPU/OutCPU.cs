@@ -8,10 +8,10 @@ public class OutCPU : MonoBehaviour
 {
 
     public ballcontroll ball;
-    
+
     public GameTextes gamas;
     public batCPU cpus;
-    
+
     private float position_x = 6;//現在位置x
     private float position_y = 6;//現在位置y
     private float positioning_max_x = 20;//最大位置
@@ -28,14 +28,14 @@ public class OutCPU : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         OPText.text = string.Format("DP：{0}", time_def);
-        
+
         if (gamas.change == true)
         {
             time_def = 100;
@@ -62,11 +62,11 @@ public class OutCPU : MonoBehaviour
         }
         if (gamas.Inning2 == 0 && time_def <= 0)
         {
-            transform.localScale = new Vector3(position_x * 0.5f, position_y*0.5f, 3);
+            transform.localScale = new Vector3(position_x * 0.5f, position_y * 0.5f, 3);
         }
         else if (gamas.Inning2 == 1 && time_def <= 0)
         {
-            transform.localScale = new Vector3(position_x * 0.5f, position_y*0.5f, 3);
+            transform.localScale = new Vector3(position_x * 0.5f, position_y * 0.5f, 3);
         }
 
         if (gamas.Inning2 == 1 && ((Input.GetMouseButton(0) && Input.GetMouseButton(1)) || (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.A))) && time_def > 0)
@@ -79,12 +79,12 @@ public class OutCPU : MonoBehaviour
             transform.localScale = new Vector3(position_x * 2, position_y * 2, 6);
             time_def--;
         }
-        if ((ball.strike == true|| ball.foul == true) && HPUP == false && ball.pitch == false)
+        if ((ball.strike == true || ball.foul == true) && HPUP == false && ball.pitch == false)
         {
             HPUP = true;
             time_def += 5;
         }
-        if ((ball.hit == true ) && HPUP == false&& ball.pitch == false)
+        if ((ball.hit == true) && HPUP == false && ball.pitch == false)
         {
             HPUP = true;
             time_def += 10;
@@ -98,18 +98,31 @@ public class OutCPU : MonoBehaviour
         {
             HPUP = false;
         }
+        if (time_def < 0)
+        {
+            time_def = 0;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.tag == "Ball")
         {
+            ball.out1 = true;
+            gamas.Strike = 0;
+            gamas.Out++;
+            if (gamas.Inning2 == 0)
+            {
+                gamas.Team1Batter++;
+            }
+            else if (gamas.Inning2 == 1)
+            {
+                gamas.Team2Batter++;
+            }
+
             
-            
+
         }
-
-
     }
 }
   
