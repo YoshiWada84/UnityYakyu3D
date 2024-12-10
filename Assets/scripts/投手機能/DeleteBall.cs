@@ -79,18 +79,7 @@ public class DeleteBall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Out")
         {
-            ball.out1 = true;
-            
-            gamas.Strike = 0;
-            gamas.Out++;
-            if (gamas.Inning2 == 0)
-            {
-                gamas.Team1Batter++;
-            }
-            else if (gamas.Inning2 == 1)
-            {
-                gamas.Team2Batter++;
-            }
+           
 
             OutAudio.PlayOneShot(OutSE);
         }
