@@ -823,13 +823,8 @@ public class GameTextes : MonoBehaviour
             ChangeText.text = string.Format("攻守交代");
             CText.gameObject.SetActive(true);
         }
-        if (change == true && gameset == true)
-        {
+        
             
-            ChangeText.text = string.Format("試合終了\n" +
-                "Spaceキーまたは左マウスでタイトルに戻る");
-            CText.gameObject.SetActive(true);
-        }
         if (change == false&&Wait==false)
         {
             CText.gameObject.SetActive(false);
@@ -844,6 +839,9 @@ public class GameTextes : MonoBehaviour
         if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || ( AtkPt - DefPt <= -7))
         {
             gameset = true;
+            ChangeText.text = string.Format("試合終了\n" +
+                "Spaceキーまたは左マウスでタイトルに戻る");
+            CText.gameObject.SetActive(true);
             InningText.text = string.Format("試合終了");
             if (Team2 == 0)
             {
@@ -873,6 +871,10 @@ public class GameTextes : MonoBehaviour
         else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true)||(Inning2==0 && change == true && AtkPt - DefPt>=7)|| AtkPt - DefPt >= 10)
         {
             gameset = true;
+            ChangeText.text = string.Format("試合終了\n" +
+                "Spaceキーまたは左マウスでタイトルに戻る");
+            CText.gameObject.SetActive(true);
+
             InningText.text = string.Format("試合終了");
             if (Team1 == 0)
             {
