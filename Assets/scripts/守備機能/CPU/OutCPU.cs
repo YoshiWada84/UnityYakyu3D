@@ -120,7 +120,7 @@ public class OutCPU : MonoBehaviour
                 gamas.Team2Batter++;
             }
 
-            
+            //gamas.CText.gameObject.SetActive(true);
 
         }
     }
