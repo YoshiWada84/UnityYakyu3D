@@ -5,17 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class T11P : MonoBehaviour
 {
+    public AudioSource sound01;
     public GameTextes gamas;
     // Start is called before the first frame update
     public GameObject team1;
     public GameObject team2;
     public GameObject team3;
-    public void OnClickStartButton()
+    private bool team = false;
+    void Start()
     {
-        team1.gameObject.SetActive(false);
-        team2.gameObject.SetActive(false);
-        team3.gameObject.SetActive(false);
-        gamas.Team1 = 0;
+        //AudioSourceコンポーネントを取得し、変数に格納
+        sound01 = GetComponent<AudioSource>();
+    }
+        public void OnClickStartButton()
+    {
+        if (team == false)
+        {
+            team1.gameObject.SetActive(false);
+            team2.gameObject.SetActive(false);
+            team3.gameObject.SetActive(false);
+            sound01.Stop();
+            sound01.PlayOneShot(sound01.clip);
+            team = true;
+            gamas.Team1 = 0;
+            
+        }
     }
 
 
