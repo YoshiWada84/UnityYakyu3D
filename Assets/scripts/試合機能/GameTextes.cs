@@ -32,7 +32,6 @@ public class GameTextes : MonoBehaviour
     public GameObject CText;//チェンジテキスト
     public GameObject CText2;//チェンジテキスト
 
-
     //BGM
     public GameObject BGM1;
     public GameObject BGM2;
@@ -78,6 +77,8 @@ public class GameTextes : MonoBehaviour
 
     public bool Win;      //勝
     public bool Lose;     //敗
+
+    public EnterName Team3;
 
     //BGM
 
@@ -159,8 +160,17 @@ public class GameTextes : MonoBehaviour
 
 
             }
+            else if (Team1 == 4)
+            {
 
-            
+                Ground1.gameObject.SetActive(false);
+                Ground2.gameObject.SetActive(false);
+                Ground3.gameObject.SetActive(true);
+
+
+            }
+
+
 
 
 
@@ -397,68 +407,130 @@ public class GameTextes : MonoBehaviour
         }
         else if (Team1 == 3)
         {
-            AttackText.text = string.Format("ポリゴンズ：{0}", AtkPt);
+            AttackText.text = string.Format("{1}：{0}", AtkPt,Team3.batter0);
             if (Inning2 == 1)
             {
-                T1Text.text = string.Format("P　？？？");
+                T1Text.text = string.Format("P　{0}",Team3.batter9);
             }
             
             if (Inning2 == 0 && Team1Batter == 1)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter,Team3.batter1);
             }
             else if (Inning2 == 0 && Team1Batter == 2)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}" ,Team1Batter, Team3.batter2);
             }
             else if (Inning2 == 0 && Team1Batter == 3)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter3);
             }
             else if (Inning2 == 0 && Team1Batter == 4)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter4);
             }
             else if (Inning2 == 0 && Team1Batter == 5)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter5);
             }
             else if (Inning2 == 0 && Team1Batter == 6)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter6);
             }
             else if (Inning2 == 0 && Team1Batter == 7)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter7);
             }
             else if (Inning2 == 0 && Team1Batter == 8)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter8);
             }
             else if (Inning2 == 0 && Team1Batter == 9)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　？？？", Team1Batter);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter9);
             }
         }
+        else if (Team1 == 4)
+        {
+            AttackText.text = string.Format("{1}：{0}", AtkPt,Team3.batter10);
+            if (Inning2 == 1)
+            {
+                T1Text.text = string.Format("P　{0}", Team3.batter19);
+            }
 
+            if (Inning2 == 0 && Team1Batter == 1)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter11);
+            }
+            else if (Inning2 == 0 && Team1Batter == 2)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter12);
+            }
+            else if (Inning2 == 0 && Team1Batter == 3)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter13);
+            }
+            else if (Inning2 == 0 && Team1Batter == 4)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter14);
+            }
+            else if (Inning2 == 0 && Team1Batter == 5)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter15);
+            }
+            else if (Inning2 == 0 && Team1Batter == 6)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter16);
+            }
+            else if (Inning2 == 0 && Team1Batter == 7)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter17);
+            }
+            else if (Inning2 == 0 && Team1Batter == 8)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter18);
+            }
+            else if (Inning2 == 0 && Team1Batter == 9)
+            {
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　{1}", Team1Batter, Team3.batter19);
+            }
+        }
         else
         {
             AttackText.text = string.Format("先攻チーム：{0}", AtkPt);
@@ -651,64 +723,126 @@ public class GameTextes : MonoBehaviour
         }
         else if (Team2 == 3)
         {
-            DeffenceText.text = string.Format("ポリゴンズ：{0}", DefPt);
+            DeffenceText.text = string.Format("{1}：{0}", DefPt,Team3.batter0);
             if (Inning2 == 0)
             {
-                T2Text.text = string.Format("P　？？？");
+                T2Text.text = string.Format("P　{0}",Team3.batter9);
             }
             if (Inning2 == 1 && Team2Batter == 1)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter,Team3.batter1);
             }
             else if (Inning2 == 1 && Team2Batter == 2)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter2);
             }
             else if (Inning2 == 1 && Team2Batter == 3)
             {
                 bat2L.SetActive(false);
-                bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                bat2.SetActive(true); 
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter3);
             }
             else if (Inning2 == 1 && Team2Batter == 4)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter4);
             }
             else if (Inning2 == 1 && Team2Batter == 5)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter5);
             }
             else if (Inning2 == 1 && Team2Batter == 6)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter6);
             }
             else if (Inning2 == 1 && Team2Batter == 7)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter7);
             }
             else if (Inning2 == 1 && Team2Batter == 8)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter8);
             }
             else if (Inning2 == 1 && Team2Batter == 9)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　？？？", Team2Batter);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter9);
+            }
+        }
+        else if (Team2 == 4)
+        {
+            DeffenceText.text = string.Format("{1}：{0}", DefPt,Team3.batter10);
+            if (Inning2 == 0)
+            {
+                T2Text.text = string.Format("P　{0}", Team3.batter19);
+            }
+            if (Inning2 == 1 && Team2Batter == 1)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter11);
+            }
+            else if (Inning2 == 1 && Team2Batter == 2)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter12);
+            }
+            else if (Inning2 == 1 && Team2Batter == 3)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter13);
+            }
+            else if (Inning2 == 1 && Team2Batter == 4)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter14);
+            }
+            else if (Inning2 == 1 && Team2Batter == 5)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter15);
+            }
+            else if (Inning2 == 1 && Team2Batter == 6)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter16);
+            }
+            else if (Inning2 == 1 && Team2Batter == 7)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter17);
+            }
+            else if (Inning2 == 1 && Team2Batter == 8)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter18);
+            }
+            else if (Inning2 == 1 && Team2Batter == 9)
+            {
+                bat2L.SetActive(false);
+                bat2.SetActive(true);
+                T2Text.text = string.Format("{0}　{1}", Team2Batter, Team3.batter19);
             }
         }
         else

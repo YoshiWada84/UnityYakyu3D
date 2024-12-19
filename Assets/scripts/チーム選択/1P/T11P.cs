@@ -11,6 +11,7 @@ public class T11P : MonoBehaviour
     public GameObject team1;
     public GameObject team2;
     public GameObject team3;
+    public GameObject team4;
     private bool team = false;
     void Start()
     {
@@ -24,6 +25,7 @@ public class T11P : MonoBehaviour
             team1.gameObject.SetActive(false);
             team2.gameObject.SetActive(false);
             team3.gameObject.SetActive(false);
+            team4.gameObject.SetActive(false);
             sound01.Stop();
             sound01.PlayOneShot(sound01.clip);
             team = true;

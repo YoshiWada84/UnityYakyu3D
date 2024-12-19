@@ -14,6 +14,7 @@ public class Menu : MonoBehaviour
     Button BT6;
     Button BT7;
     Button BT8;
+    Button BT9;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class Menu : MonoBehaviour
         BT6 = GameObject.Find("/Canvas/操作").GetComponent<Button>();
         BT7 = GameObject.Find("/Canvas/収録").GetComponent<Button>();
         BT8 = GameObject.Find("/Canvas/END").GetComponent<Button>();
+        BT9 = GameObject.Find("/Canvas/タイムベース1").GetComponent<Button>();
 
         // 最初に選択状態にしたいボタンの設定
         BT1.Select();
