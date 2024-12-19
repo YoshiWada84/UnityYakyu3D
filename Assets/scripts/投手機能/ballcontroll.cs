@@ -84,7 +84,7 @@ public class ballcontroll : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         
-        if (collision.gameObject.tag == "Bat"&&((Input.GetKey(KeyCode.A)&&gamas.Inning2==0)))
+        if (collision.gameObject.tag == "Bat"&&(Input.GetKey(KeyCode.A)&&gamas.Inning2==0))
         {
             hitter = true;
             hitBomb = true;
@@ -95,58 +95,7 @@ public class ballcontroll : MonoBehaviour
             //pitch = false;
 
         }
-        else if (collision.gameObject.tag == "Strike")
-        {
-            pitch = false;
-            strike = true;
-            out1 = false;
-            foul = false;
-            hit = false;
-            homerun = false;
-        }
-        else if (collision.gameObject.tag == "Out")
-        {
-
-            out1 = true;
-            strike = false;
-            
-            foul = false;
-            hit = false;
-            homerun = false;
-
-        }
-        else if (collision.gameObject.tag == "Foul")
-        {
-
-            foul = true;
-            strike = false;
-            out1 = false;
-            
-            hit = false;
-            homerun = false;
-
-        }
-        else if (collision.gameObject.tag == "Hit")
-        {
-           
-            hit = true;
-            strike = false;
-            out1 = false;
-            foul = false;
-           
-            homerun = false;
-
-        }
-        else if (collision.gameObject.tag == "Homerun")
-        {
-
-            homerun = true;
-            strike = false;
-            out1 = false;
-            foul = false;
-            hit = false;
-           
-        }
+        
 
 
 

@@ -12,6 +12,8 @@ public class OutCPU : MonoBehaviour
     public GameTextes gamas;
     public batCPU cpus;
 
+    public bool bigger = false;
+
     private float position_x = 6;//åªç›à íux
     private float position_y = 6;//åªç›à íuy
     private float positioning_max_x = 20;//ç≈ëÂà íu
@@ -47,18 +49,20 @@ public class OutCPU : MonoBehaviour
         if (1 <= gamas.Inning)
         {
             transform.localScale = new Vector3(position_x, position_y, 1);
-
+            bigger = false;
         }
 
         if (gamas.Inning2 == 0 && time_def > 0 && (ball.transform.position.y >= 5))
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 6);
             time_def -= 2;
+            bigger = true;
         }
         else if (gamas.Inning2 == 0 && time_def > 0 && (ball.transform.position.z >= 50))
         {
             transform.localScale = new Vector3(position_x * 2, position_y * 2, 6);
             time_def--;
+            bigger = true;
         }
         if (gamas.Inning2 == 0 && time_def <= 0)
         {
@@ -109,6 +113,11 @@ public class OutCPU : MonoBehaviour
         if (collision.gameObject.tag == "Ball")
         {
             ball.out1 = true;
+            cpus.hit = false;
+            ball.strike = false;
+            ball.foul = false;
+            ball.hit = false;
+            ball.homerun = false;
             gamas.Strike = 0;
             gamas.Out++;
             if (gamas.Inning2 == 0)

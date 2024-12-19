@@ -25,6 +25,11 @@ public class Strike : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
+            ball.out1 = false;
+            ball.strike = true;
+            ball.foul = false;
+            ball.hit = false;
+            ball.homerun = false;
             gamas.Strike++;
             OutAudio.PlayOneShot(OutSE);
         }

@@ -116,6 +116,10 @@ public class Out : MonoBehaviour
         if (collision.gameObject.tag == "Ball")
         {
             ball.out1 = true;
+            ball.strike = false;
+            ball.foul = false;
+            ball.hit = false;
+            ball.homerun = false;
             gamas.Strike = 0;
             gamas.Out++;
             if (gamas.Inning2 == 0)

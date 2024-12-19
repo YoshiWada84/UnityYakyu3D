@@ -8,7 +8,8 @@ public class Hit : MonoBehaviour
     public AudioClip HitSE;
     public GameTextes gamas;
 
-    
+    public ballcontroll ball;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,11 @@ public class Hit : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            
+            ball.out1 = false;
+            ball.strike = false;
+            ball.foul = false;
+            ball.hit = true;
+            ball.homerun = false;
 
             HitAudio.Stop();
             HitAudio.PlayOneShot(HitSE);
