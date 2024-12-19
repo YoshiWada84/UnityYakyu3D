@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Unity.VisualScripting.Antlr3.Runtime;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
@@ -10,7 +11,8 @@ public class DeleteBall : MonoBehaviour
     private Rigidbody rig;
     public int time=0;
 
-    
+    public GameObject CText;//チェンジテキスト
+    public Text ChangeText;    //チェンジテキスト
 
     public AudioSource HitAudio;
     public AudioClip HitSE;
@@ -79,10 +81,15 @@ public class DeleteBall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Out")
         {
-           
-
+            ball.out1 = true;
+            ball.strike = false;
+            ball.foul = false;
+            ball.hit = false;
+            ball.homerun = false;
             OutAudio.PlayOneShot(OutSE);
+            
         }
+       
         if (collision.gameObject.tag != "Ground" & collision.gameObject.tag != "Bat"& collision.gameObject.tag != "town")
         {
             //Destroy(gameObject);

@@ -8,6 +8,7 @@ public class Homerun : MonoBehaviour
     public AudioClip HitSE;
     public GameTextes gamas;
 
+    public ballcontroll ball;
     
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,11 @@ public class Homerun : MonoBehaviour
         {
             HitAudio.Stop();
             HitAudio.PlayOneShot(HitSE);
-            
+            ball.out1 = false;
+            ball.strike = false;
+            ball.foul = false;
+            ball.hit = false;
+            ball.homerun = true;
 
 
             gamas.Strike = 0;

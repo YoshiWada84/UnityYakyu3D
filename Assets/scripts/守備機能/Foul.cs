@@ -7,7 +7,10 @@ public class Foul : MonoBehaviour
     public AudioSource FoulAudio;
     public AudioClip FoulSE;
     public GameTextes gamas;
-    
+
+
+    public ballcontroll ball;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,11 @@ public class Foul : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-           
+            ball.out1 = false;
+            ball.strike = false;
+            ball.foul = true;
+            ball.hit = false;
+            ball.homerun = false;
             FoulAudio.Stop();
             FoulAudio.PlayOneShot(FoulSE);
             if (2<=gamas.Strike )

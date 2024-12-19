@@ -817,21 +817,12 @@ public class GameTextes : MonoBehaviour
             Runner = 2;
         }
 
-        #region//チェンジ処理
-        if (change == true&& (Strike==0||Ball.out1==true)&&gameset==false&&1<min)
-        {
-            ChangeText.text = string.Format("攻守交代");
-            CText.gameObject.SetActive(true);
-        }
-        
-            
-        if (change == false&&Wait==false)
+
+        if (change == false && Wait == false)
         {
             CText.gameObject.SetActive(false);
         }
-        #endregion
-
-        //試合終了判定
+       //試合終了判定
         if (gameset == true)
         {
             sec2++;
@@ -942,28 +933,35 @@ public class GameTextes : MonoBehaviour
             Def1.gameObject.SetActive(false);
             Def2.gameObject.SetActive(true);
         }
-        if (Ball.strike==true&&ballcontroll.shootSwitch==true&&Ball.pitch==false&&(Strike==1||Strike==2) && gameset == false)
+        if (Ball.strike == true && ballcontroll.shootSwitch == true && Ball.pitch == false && (Strike == 1 || Strike == 2) && gameset == false)
         {
             ChangeText.text = string.Format("ストライク");
             CText.gameObject.SetActive(true);
         }
-        else if (Ball.strike == true && ballcontroll.shootSwitch == true &&Strike==0&&change==false&&gameset==false)
+        else if (Ball.strike == true && ballcontroll.shootSwitch == true && Strike == 0 && change == false && gameset == false)
         {
             ChangeText.text = string.Format("ストライク　バッターアウト");
             CText.gameObject.SetActive(true);
         }
-        else if (Ball.foul == true && ballcontroll.shootSwitch == true  && gameset == false)
+        else if (Ball.foul == true && ballcontroll.shootSwitch == true && gameset == false)
         {
             ChangeText.text = string.Format("ファール");
             CText.gameObject.SetActive(true);
         }
 
-        else if (Ball.out1 == true && ballcontroll.shootSwitch == true &&change==false && gameset == false)
+        else if (Ball.out1 == true && ballcontroll.shootSwitch == true && change == false && gameset == false)
         {
             ChangeText.text = string.Format("アウト");
             CText.gameObject.SetActive(true);
+            
         }
-        else if (Ball.hit == true && ballcontroll.shootSwitch == true  && gameset == false)
+        //チェンジ処理
+        else if (Ball.out1 == true && ballcontroll.shootSwitch == true && change == true && gameset == false)
+        {
+            ChangeText.text = string.Format("攻守交代");
+            CText.gameObject.SetActive(true);
+        }
+        else if (Ball.hit == true && ballcontroll.shootSwitch == true && gameset == false)
         {
             ChangeText.text = string.Format("ヒット");
             CText.gameObject.SetActive(true);
@@ -973,7 +971,6 @@ public class GameTextes : MonoBehaviour
             ChangeText.text = string.Format("ホームラン");
             CText.gameObject.SetActive(true);
         }
-
         if (Ball.pitch==true)
         {
             Ball.strike = false;
