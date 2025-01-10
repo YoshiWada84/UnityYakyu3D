@@ -88,16 +88,20 @@ public class Out : MonoBehaviour
             transform.localScale = new Vector3(position_x * 2, position_y * 2, 6);
             time_def--;
         }
-
-        if ((ball.hit == true) && HPUP == false && ball.pitch == false)
+        if((ball.strike == true || ball.foul == true) && HPUP == false && ball.pitch == false)
         {
             HPUP = true;
             time_def += 10;
         }
+        if ((ball.hit == true) && HPUP == false && ball.pitch == false)
+        {
+            HPUP = true;
+            time_def += 20;
+        }
         if ((ball.homerun == true) && HPUP == false && ball.pitch == false)
         {
             HPUP = true;
-            time_def += 30;
+            time_def += 100;
         }
         if (ball.pitch == true)
         {

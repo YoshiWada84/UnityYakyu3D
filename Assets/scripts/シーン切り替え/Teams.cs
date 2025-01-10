@@ -11,9 +11,13 @@ public class Teams : MonoBehaviour
     public GameObject a4;
     public GameObject a5;
     public GameObject a6;
+    public GameObject a7;
 
     public SceneChange1P sceneChange1P;
     public SceneChange2P sceneChange2P;
+    public SceneChangeTeam sceneChangeTeam;
+    public SceneChangeTeam2 sceneChangeTeam2;
+
     public GameObject img1;
     public AudioClip audio1;
     public AudioSource audioSource; //オーディオソース
@@ -34,6 +38,8 @@ public class Teams : MonoBehaviour
             a4.SetActive(false);
             a5.SetActive(false);
             a6.SetActive(false);
+            a7.SetActive(false);
+            this.gameObject.SetActive(false);
         }
         if (sceneChange2P.a == true)
         {
@@ -41,7 +47,26 @@ public class Teams : MonoBehaviour
             a4.SetActive(false);
             a5.SetActive(false);
             a6.SetActive(false);
-
+            a7.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
+        if (sceneChangeTeam.a == true)
+        {
+            img1.gameObject.SetActive(false);
+            a4.SetActive(false);
+            a5.SetActive(false);
+            a6.SetActive(false);
+            a7.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
+        if (sceneChangeTeam2.a == true)
+        {
+            img1.gameObject.SetActive(false);
+            a4.SetActive(false);
+            a5.SetActive(false);
+            a6.SetActive(false);
+            a7.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
     public void OnClickStartButton()
@@ -56,6 +81,8 @@ public class Teams : MonoBehaviour
             a4.SetActive(false);
             a5.SetActive(false);
             a6.SetActive(false);
+            a7.SetActive(false);
+
 
             button = true;
             
@@ -70,6 +97,7 @@ public class Teams : MonoBehaviour
             a4.SetActive(true);
             a5.SetActive(true);
             a6.SetActive(true);
+            a7.SetActive(true);
 
         }
 
