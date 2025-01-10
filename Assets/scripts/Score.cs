@@ -35,7 +35,7 @@ public class Score : MonoBehaviour
             PlayerPrefs.DeleteAll();
             Win1 = 0;
             Lose1 = 0;
-
+            
             //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
             highScoreText.text = "勝ち: " + Win1.ToString() + "\n負け: " + Lose1.ToString();
             //ハイスコアを表示
