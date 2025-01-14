@@ -27,17 +27,35 @@ namespace ExplosionSample
         }
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.tag == "Ball" && ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 3 <= gamas.Inning) || gamas.Out == 2)&&!Input.GetMouseButton(1))
+            if (gamas.game == false)
             {
-                bat.hit = true;
-                ball.hitBomb = true;
+                if (collision.gameObject.tag == "Ball" && ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 3 <= gamas.Inning) || gamas.Out == 2) && !Input.GetMouseButton(1))
+                {
+                    bat.hit = true;
+                    ball.hitBomb = true;
+                }
+                else if (collision.gameObject.tag == "Ball")
+                {
+                    bat.hit = true;
+                    // ”š”­‚ð¶¬
+                    var explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+                    explosion.Explode();
+                }
             }
-            else if (collision.gameObject.tag == "Ball")
+            else if (gamas.game == true)
             {
-                bat.hit = true;
-                // ”š”­‚ð¶¬
-                var explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-                explosion.Explode();
+                if (collision.gameObject.tag == "Ball" && ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 9 <= gamas.Inning) || gamas.Out == 2) && !Input.GetMouseButton(1))
+                {
+                    bat.hit = true;
+                    ball.hitBomb = true;
+                }
+                else if (collision.gameObject.tag == "Ball")
+                {
+                    bat.hit = true;
+                    // ”š”­‚ð¶¬
+                    var explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+                    explosion.Explode();
+                }
             }
         }
     }

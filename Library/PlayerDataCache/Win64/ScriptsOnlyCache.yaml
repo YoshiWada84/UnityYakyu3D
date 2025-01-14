@@ -12,6 +12,8 @@ ScriptsOnlyBuild:
     - ExplosionSample.Explosion1
     - ExplosionSample.ExplosionPitch
     - Foul
+    - Game3Inning
+    - Game9Inning
     - GameStart
     - GameTextes
     - Hit
@@ -150,10 +152,16 @@ ScriptsOnlyBuild:
     fullTypeName: T51P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
+    fullTypeName: Game9Inning
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
     fullTypeName: T52P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: T32P
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Game3Inning
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: T41P
@@ -163,39 +171,45 @@ ScriptsOnlyBuild:
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: GameStart
-    methodName: OnClickStartButton
-  - assembly: Assembly-CSharp
-    fullTypeName: T11P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: T42P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
-    fullTypeName: T32P
+    fullTypeName: T12P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
-    fullTypeName: T31P
+    fullTypeName: T32P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: T41P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
+    fullTypeName: Game9Inning
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
     fullTypeName: T21P
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Game3Inning
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: T11P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: T51P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
-    fullTypeName: T12P
-    methodName: OnClickStartButton
-  - assembly: Assembly-CSharp
     fullTypeName: T52P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
-    fullTypeName: GameStart
+    fullTypeName: T31P
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: T22P
+    methodName: OnClickStartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: GameStart
     methodName: OnClickStartButton
   - assembly: Assembly-CSharp
     fullTypeName: NameSet8
@@ -358,33 +372,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5180}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5214}
     - Class: 114
-      Script: {instanceID: 5750}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5816}
+      Script: {instanceID: 5752}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5818}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 5946}
     - Class: 114
-      Script: {instanceID: 6354}
+      Script: {instanceID: 6064}
     - Class: 114
-      Script: {instanceID: 6452}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 6494}
+      Script: {instanceID: 6358}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6456}
     - Class: 114
-      Script: {instanceID: 7136}
+      Script: {instanceID: 6498}
     - Class: 114
-      Script: {instanceID: 7270}
+      Script: {instanceID: 6708}
     - Class: 114
-      Script: {instanceID: 7736}
+      Script: {instanceID: 7140}
     - Class: 114
-      Script: {instanceID: 7796}
+      Script: {instanceID: 7274}
     - Class: 114
-      Script: {instanceID: 7814}
+      Script: {instanceID: 7740}
+    - Class: 114
+      Script: {instanceID: 7800}
+    - Class: 114
+      Script: {instanceID: 7818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -477,29 +495,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 5288}
+      Script: {instanceID: 5290}
     - Class: 114
-      Script: {instanceID: 5326}
+      Script: {instanceID: 5328}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5750}
+      Script: {instanceID: 5752}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5946}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 6418}
+      Script: {instanceID: 6422}
     - Class: 114
-      Script: {instanceID: 6554}
+      Script: {instanceID: 6558}
     - Class: 114
-      Script: {instanceID: 7270}
+      Script: {instanceID: 7274}
     - Class: 114
-      Script: {instanceID: 7796}
+      Script: {instanceID: 7800}
     - Class: 114
-      Script: {instanceID: 7936}
+      Script: {instanceID: 7940}
     - Class: 114
-      Script: {instanceID: 7964}
+      Script: {instanceID: 7968}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -584,29 +602,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4754}
     - Class: 114
-      Script: {instanceID: 5418}
+      Script: {instanceID: 5420}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5484}
+      Script: {instanceID: 5486}
     - Class: 114
-      Script: {instanceID: 5496}
+      Script: {instanceID: 5498}
     - Class: 114
-      Script: {instanceID: 5750}
+      Script: {instanceID: 5752}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5946}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 6554}
+      Script: {instanceID: 6558}
     - Class: 114
-      Script: {instanceID: 7270}
+      Script: {instanceID: 7274}
     - Class: 114
-      Script: {instanceID: 7346}
+      Script: {instanceID: 7350}
     - Class: 114
-      Script: {instanceID: 7796}
+      Script: {instanceID: 7800}
     - Class: 114
-      Script: {instanceID: 7936}
+      Script: {instanceID: 7940}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -715,35 +733,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4982}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5214}
     - Class: 114
-      Script: {instanceID: 5750}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5816}
+      Script: {instanceID: 5752}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5818}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 5946}
     - Class: 114
-      Script: {instanceID: 6354}
+      Script: {instanceID: 6064}
     - Class: 114
-      Script: {instanceID: 6452}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 6494}
+      Script: {instanceID: 6358}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6456}
     - Class: 114
-      Script: {instanceID: 7132}
+      Script: {instanceID: 6498}
+    - Class: 114
+      Script: {instanceID: 6708}
     - Class: 114
       Script: {instanceID: 7136}
     - Class: 114
-      Script: {instanceID: 7270}
+      Script: {instanceID: 7140}
     - Class: 114
-      Script: {instanceID: 7736}
+      Script: {instanceID: 7274}
     - Class: 114
-      Script: {instanceID: 7796}
+      Script: {instanceID: 7740}
     - Class: 114
-      Script: {instanceID: 7814}
+      Script: {instanceID: 7800}
+    - Class: 114
+      Script: {instanceID: 7818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -828,25 +850,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4538}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5750}
+      Script: {instanceID: 5752}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5946}
     - Class: 114
-      Script: {instanceID: 6012}
+      Script: {instanceID: 6014}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 6382}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 6662}
+      Script: {instanceID: 6666}
     - Class: 114
-      Script: {instanceID: 7270}
+      Script: {instanceID: 7274}
     - Class: 114
-      Script: {instanceID: 7796}
+      Script: {instanceID: 7800}
     - Class: 114
-      Script: {instanceID: 33900}
+      Script: {instanceID: 34544}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1708,6 +1730,12 @@ ScriptsOnlyBuild:
     className: Vignette
   - hash:
       serializedVersion: 2
+      Hash: 79df015156752278ad6ffa445bdca305
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Game3Inning
+  - hash:
+      serializedVersion: 2
       Hash: f542c1afca5bb4022f91fdda19b8d622
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1786,7 +1814,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: c09814800ba753f045f37064e9e399b6
+      Hash: f7822805ba3b9a07469eb2569d25d8c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameTextes
@@ -1820,6 +1848,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: END
+  - hash:
+      serializedVersion: 2
+      Hash: 79df015156752278ad6ffa445bdca305
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Game9Inning
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -2199,4 +2233,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/NameSet.unity
   - Assets/Scenes/NameSet2.unity
-  playerPath: "C:/Users/Yoshi/OneDrive/\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7/yakyu3D/\u672C\u7DE8/yakyu3D.exe"
+  playerPath: "C:/Users/GA3/Desktop/Yakyu3D/\u672C\u7DE8/yakyu3D.exe"
