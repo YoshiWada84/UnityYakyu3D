@@ -61,13 +61,21 @@ public class batCPU : MonoBehaviour
             batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.blue;
 
         }
-        if (ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 3 <= gamas.Inning) || gamas.Out == 2)&&20<r_sum)
+        if (gamas.game==false) {
+            if (ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 3 <= gamas.Inning) || gamas.Out == 2) && 20 < r_sum)
+            {
+                batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            }
+        }
+        else if (gamas.game == true)
         {
-            batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            if (ball.hitBomb == false && ((gamas.Runner + 1 > gamas.AtkPt - gamas.DefPt && 9 <= gamas.Inning) || gamas.Out == 2) && 20 < r_sum)
+            {
+                batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            }
         }
 
-        
-        
+
 
 
 

@@ -17,6 +17,8 @@ public class Team : MonoBehaviour
     Button BT9;
     Button BT10;
     Button BT11;
+    Button BT12;
+    Button BT13;
 
     public GameTextes gamas;
 
@@ -36,6 +38,8 @@ public class Team : MonoBehaviour
         BT9 = GameObject.Find("/Canvas/TeamPlay/Play").GetComponent<Button>();
         BT10 = GameObject.Find("/Canvas/TeamPlay/1P4").GetComponent<Button>();
         BT11 = GameObject.Find("/Canvas/TeamPlay/2P4").GetComponent<Button>();
+        BT12 = GameObject.Find("/Canvas/TeamPlay/3‰ñ").GetComponent<Button>();
+        BT13 = GameObject.Find("/Canvas/TeamPlay/9‰ñ").GetComponent<Button>();
 
         // Å‰‚É‘I‘ğó‘Ô‚É‚µ‚½‚¢ƒ{ƒ^ƒ“‚Ìİ’è
         BT1.Select();
