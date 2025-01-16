@@ -37,7 +37,7 @@ namespace ExplosionSample
         }
         void Update()
         {
-            rands = Random.Range(-10, 100);
+            rands = Random.Range(10, 200);
             _futtobiPower = rands;
         }
         /// <summary>
