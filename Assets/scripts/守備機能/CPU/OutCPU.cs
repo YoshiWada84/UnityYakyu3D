@@ -52,13 +52,13 @@ public class OutCPU : MonoBehaviour
             bigger = false;
         }
 
-        if (gamas.Inning2 == 0 && time_def > 0 && (ball.transform.position.y >= 5))
+        if (gamas.Inning2 == 0 && time_def > 0 && (ball.transform.position.y >= 12))
         {
             transform.localScale = new Vector3(positioning_max_x, positioning_max_y, 6);
             time_def -= 2;
             bigger = true;
         }
-        else if (gamas.Inning2 == 0 && time_def > 0 && (ball.transform.position.z >= 50))
+        else if (gamas.Inning2 == 0 && time_def > 0 && (ball.transform.position.z >= 30))
         {
             transform.localScale = new Vector3(position_x * 2, position_y * 2, 6);
             time_def--;
