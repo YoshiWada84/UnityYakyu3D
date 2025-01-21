@@ -6,7 +6,7 @@ using UnityEngine;
 public class bat : MonoBehaviour
 {
     public GameTextes gamas;//試合関連スクリプト
-    public GameObject batbat;
+    public GameObject batbat;//バット
     //public GameObject ball;
     private int r = 10; // Rotation Speed
     //private int r = 1; // Rotation Speedテスト用
@@ -33,18 +33,21 @@ public class bat : MonoBehaviour
             Debug.Log("通常スイングが選択されました。");
 
             //if (TargetObject == null) return;
-
+            //スイング
             transform.Rotate(0, -r, 0);
             r_sum += r;
         }
         else if ((!Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.A) && r_sum != 0))
         {
+
+            //スイング
             transform.Rotate(0, r, 0);
             r_sum -= r;
             batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.red;
         }
         if (Input.GetKey(KeyCode.A) && BC.hitBomb == false)
         {
+            //ランダムスイング
             batbatCC.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         }
 
