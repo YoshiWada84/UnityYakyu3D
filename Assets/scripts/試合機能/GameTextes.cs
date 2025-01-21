@@ -187,15 +187,15 @@ public class GameTextes : MonoBehaviour
             
             bat2.gameObject.SetActive(false);
             bat2L.gameObject.SetActive(false);
-            if (3 < Inning&&game==false)
+            if (3 < Inning&&game==false)//延長処理(3回制)
             {
                 InningText.text = string.Format("延長{0}回表", Inning);
             }
-            else if (9 < Inning && game == true)
+            else if (9 < Inning && game == true)//延長処理(9回制)
             {
                 InningText.text = string.Format("延長{0}回表", Inning);
             }
-            else
+            else//イニング処理(その他)
             {
                 InningText.text = string.Format("{0}回表", Inning);
             }
@@ -210,15 +210,15 @@ public class GameTextes : MonoBehaviour
         {
             bat1.gameObject.SetActive(false);
             bat1L.gameObject.SetActive(false);
-            if (3 < Inning&& game == false)
+            if (3 < Inning&& game == false)//延長処理(3回制)
             {
                 InningText.text = string.Format("延長{0}回裏", Inning);
             }
-            else if (9 < Inning && game == true)
+            else if (9 < Inning && game == true)//延長処理(9回制)
             {
                 InningText.text = string.Format("延長{0}回裏", Inning);
             }
-            else
+            else//イニング処理
             {
                 InningText.text = string.Format("{0}回裏", Inning);
             }
@@ -954,8 +954,8 @@ public class GameTextes : MonoBehaviour
         }
         #endregion
 
-        StrikeText.text = string.Format("S：{0}", Strike);
-        OutText.text = string.Format("O：{0}", Out);
+        StrikeText.text = string.Format("S：{0}", Strike);//ストライクカウント
+        OutText.text = string.Format("O：{0}", Out);//アウトカウント
 
         #region//試合終了判定、タイブレーク処理
         //タイブレーク
@@ -974,7 +974,7 @@ public class GameTextes : MonoBehaviour
             }
         }
 
-
+        //チェンジ処理を外す
         if (change == false && Wait == false)
         {
             CText.gameObject.SetActive(false);
@@ -1017,7 +1017,7 @@ public class GameTextes : MonoBehaviour
 
                 Lose = true;
             }
-            else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true) || (Inning2 == 0 && change == true && AtkPt - DefPt >= 7) || AtkPt - DefPt >= 10)
+            else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt))||(change==true&&AtkPt+DefPt>=7)|| AtkPt + DefPt >= 10)
             {
                 gameset = true;
                 ChangeText.text = string.Format("試合終了\n" +
@@ -1054,7 +1054,7 @@ public class GameTextes : MonoBehaviour
         }
         else if (game == true)
         {
-            if ((10 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || (5 < Inning && (AtkPt - DefPt <= -10) || (7<Inning&&(AtkPt - DefPt <= -7))))
+            if ((9 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || (5<=Inning&&(AtkPt + DefPt<=-10))|| (7 <= Inning && (AtkPt + DefPt <= -7)))
             {
                 gameset = true;
                 ChangeText.text = string.Format("試合終了\n" +
@@ -1086,7 +1086,7 @@ public class GameTextes : MonoBehaviour
 
                 Lose = true;
             }
-            else if ((10 <= Inning && Inning2 == 0 && (AtkPt > DefPt) && change == true) || (7<Inning&&Inning2 == 0 && change == true && AtkPt - DefPt >= 7) || (5 < Inning && Inning2 == 0 && change == true && AtkPt - DefPt >= 10))
+            else if ((10 <= Inning && Inning2 == 0 && (AtkPt > DefPt)) || (6<=Inning&&change == true && AtkPt + DefPt >= 10) || (8 <= Inning && change == true && AtkPt + DefPt >= 10))
             {
                 gameset = true;
                 ChangeText.text = string.Format("試合終了\n" +
@@ -1111,7 +1111,9 @@ public class GameTextes : MonoBehaviour
                     StrikeText.text = string.Format("先攻チームの勝ち");
                 }
 
-                OutText.text = string.Format("");
+              
+
+            OutText.text = string.Format("");
 
                 BGM4.gameObject.SetActive(true);
                 BGM1.gameObject.SetActive(false);
@@ -1121,10 +1123,11 @@ public class GameTextes : MonoBehaviour
                 Win = true;
             }
         }
-        if (gameset == true && 300 < sec2 && (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)))
+        if (gameset == true && 300 < sec2 && (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)))//タイトルに戻る
         {
             SceneManager.LoadScene("Title");
         }
+        //試合時間処理(使っていない)
         if (gameset == false)
         {
             sec++;
@@ -1150,33 +1153,33 @@ public class GameTextes : MonoBehaviour
         {
             ScoreText.text = string.Format("{0}回裏\n{1}　-　{2}", Inning, AtkPt, DefPt);//バックスクリーンスコア
         }
-        if (Inning2 == 0&&change==true&&Wait==false)
+        if (Inning2 == 0&&change==true&&Wait==false)//攻守交代処理
         {
             Def1.gameObject.SetActive(true);
             Def2.gameObject.SetActive(false);
         }
-        else if (Inning2 == 1 && change == true && Wait == false)
+        else if (Inning2 == 1 && change == true && Wait == false)//攻守交代処理
         {
             Def1.gameObject.SetActive(false);
             Def2.gameObject.SetActive(true);
         }
-        if (Ball.strike == true && ballcontroll.shootSwitch == true && Ball.pitch == false && (Strike == 1 || Strike == 2) && gameset == false)
+        if (Ball.strike == true && ballcontroll.shootSwitch == true && Ball.pitch == false && (Strike == 1 || Strike == 2) && gameset == false)//ストライク処理
         {
             ChangeText.text = string.Format("ストライク");
             CText.gameObject.SetActive(true);
         }
-        else if (Ball.strike == true && ballcontroll.shootSwitch == true && Strike == 0 && change == false && gameset == false)
+        else if (Ball.strike == true && ballcontroll.shootSwitch == true && Strike == 0 && change == false && gameset == false)//三振処理
         {
             ChangeText.text = string.Format("ストライク　バッターアウト");
             CText.gameObject.SetActive(true);
         }
-        else if (Ball.foul == true && ballcontroll.shootSwitch == true && gameset == false)
+        else if (Ball.foul == true && ballcontroll.shootSwitch == true && gameset == false)//ファール処理
         {
             ChangeText.text = string.Format("ファール");
             CText.gameObject.SetActive(true);
         }
 
-        else if (Ball.out1 == true && ballcontroll.shootSwitch == true && change == false && gameset == false)
+        else if (Ball.out1 == true && ballcontroll.shootSwitch == true && change == false && gameset == false)//アウト処理
         {
             ChangeText.text = string.Format("アウト");
             CText.gameObject.SetActive(true);
@@ -1188,16 +1191,19 @@ public class GameTextes : MonoBehaviour
             ChangeText.text = string.Format("攻守交代");
             CText.gameObject.SetActive(true);
         }
+        //ヒット処理
         else if (Ball.hit == true && ballcontroll.shootSwitch == true && gameset == false)
         {
             ChangeText.text = string.Format("ヒット");
             CText.gameObject.SetActive(true);
         }
+        //ホームラン処理
         else if (Ball.homerun == true && ballcontroll.shootSwitch == true && gameset == false)
         {
             ChangeText.text = string.Format("ホームラン");
             CText.gameObject.SetActive(true);
         }
+        //投球処理
         if (Ball.pitch==true)
         {
             Ball.strike = false;
@@ -1210,6 +1216,7 @@ public class GameTextes : MonoBehaviour
     }
     void FixedUpdate()
     {
+        //ストライク、三振処理
         if (2 < Strike)
         {
             Strike = 0;
@@ -1223,6 +1230,7 @@ public class GameTextes : MonoBehaviour
                 Team2Batter++;
             }
         }
+        //チェンジ処理
         if (2 < Out)
         {
             
@@ -1233,11 +1241,13 @@ public class GameTextes : MonoBehaviour
             change = true;
             Bakugeki.SetActive(true);
         }
+        //攻守交代処理(裏から表)
         if (1 < Inning2)
         {
             Inning2 = 0;
             Inning++;
         }
+        //打順処理
         if (9 < Team1Batter)
         {
             Team1Batter = 1;
