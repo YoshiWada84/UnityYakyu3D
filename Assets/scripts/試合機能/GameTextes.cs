@@ -1017,7 +1017,7 @@ public class GameTextes : MonoBehaviour
 
                 Lose = true;
             }
-            else if ((4 <= Inning && Inning2 == 0 && (AtkPt > DefPt))||(Inning2==0&&change==true&& AtkPt + DefPt >= 7) ||AtkPt + DefPt >= 10)
+            else if ((4 <= Inning && Inning2 == 0&&change==true && (AtkPt > DefPt))||(Inning2==0&&change==true&& AtkPt + DefPt >= 7) ||AtkPt + DefPt >= 10)
             {
                 gameset = true;
                 ChangeText.text = string.Format("ééçáèIóπ\n" +
@@ -1054,7 +1054,7 @@ public class GameTextes : MonoBehaviour
         }
         else if (game == true)
         {
-            if ((9 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || (5<=Inning&&(AtkPt + DefPt<=-10))|| (7 <= Inning && (AtkPt + DefPt <= -7)))
+            if ((9 <= Inning && Inning2 == 1 &&change==true&& (AtkPt < DefPt)) || (5<=Inning&&(AtkPt + DefPt<=-10))|| (7 <= Inning && (AtkPt + DefPt <= -7)))
             {
                 gameset = true;
                 ChangeText.text = string.Format("ééçáèIóπ\n" +
@@ -1086,7 +1086,7 @@ public class GameTextes : MonoBehaviour
 
                 Lose = true;
             }
-            else if ((10 <= Inning && Inning2 == 0 && (AtkPt > DefPt)) || (6<=Inning&&Inning2==0&&change == true && AtkPt + DefPt >= 10) || (8 <= Inning && Inning2 == 0 && change == true && AtkPt + DefPt >= 10))
+            else if ((10 <= Inning && change == true && Inning2 == 0 && (AtkPt > DefPt)) || (6<=Inning&&Inning2==0&&change == true && AtkPt + DefPt >= 10) || (8 <= Inning && Inning2 == 0 && change == true && AtkPt + DefPt >= 10))
             {
                 gameset = true;
                 ChangeText.text = string.Format("ééçáèIóπ\n" +
