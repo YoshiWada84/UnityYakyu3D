@@ -67,8 +67,8 @@ public class EnterName : MonoBehaviour
         batter7 = PlayerPrefs.GetString(key7, "null");
         batter8 = PlayerPrefs.GetString(key8, "null");
         batter9 = PlayerPrefs.GetString(key9, "null");
-        batter10 = PlayerPrefs.GetString(key10, "null");
 
+        batter10 = PlayerPrefs.GetString(key10, "null");
         batter11 = PlayerPrefs.GetString(key11, "null");
         batter12 = PlayerPrefs.GetString(key12, "null");
         batter13 = PlayerPrefs.GetString(key13, "null");
