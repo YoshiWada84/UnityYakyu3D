@@ -30,16 +30,16 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.E))
-        {
-            PlayerPrefs.DeleteAll();
-            win1 = 0;
-            lose1 = 0;
+        //if (Input.GetKey(KeyCode.Alpha0))
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //    win1 = 0;
+        //    lose1 = 0;
 
-            //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
-            highScoreText.text = "1P勝利数: " + win1.ToString() + "\n2P勝利数: " + lose1.ToString();
-            //ハイスコアを表示
-        }
+        //    //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
+        //    highScoreText.text = "1P勝利数: " + win1.ToString() + "\n2P勝利数: " + lose1.ToString();
+        //    //ハイスコアを表示
+        //}
         if (gamas.gameset == false)
         {
             unlit = true;
