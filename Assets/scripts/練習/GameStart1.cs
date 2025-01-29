@@ -17,7 +17,7 @@ public class GameStart1 : MonoBehaviour
         gamas.min = 0;
         gamas.sec = 0;
         gamas.Ball.timer = 0;
-        gamas.BGM1.gameObject.SetActive(false);
+        
         gamas.CText2.gameObject.SetActive(false);
     }
 
