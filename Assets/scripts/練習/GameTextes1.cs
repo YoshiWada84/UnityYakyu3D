@@ -21,12 +21,6 @@ public class GameTextes1 : MonoBehaviour
 
     public GameObject CText;//チェンジテキスト
     public GameObject CText2;//チェンジテキスト
-
-    //BGM
-    public GameObject BGM1;
-    
-
-
     
     
     public Text StrikeText;     //ストライクカウント
@@ -96,14 +90,13 @@ public class GameTextes1 : MonoBehaviour
         CText2.gameObject.SetActive(true);
 
 
-        BGM1.gameObject.SetActive(true);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha0))
+        if (Input.GetKey(KeyCode.Alpha1))
         {
             Ball.hitBomb = false;
             Bakugeki.gameObject.SetActive(true);
@@ -490,11 +483,11 @@ public class GameTextes1 : MonoBehaviour
 
         if (Inning2 == 0) 
         {
-            ScoreText.text = string.Format("{0}回表\n{1}　-　{2}", Inning,AtkPt, DefPt);//バックスクリーンスコア
+            ScoreText.text = string.Format("1Pチーム　{0}\n2Pチーム　{1}", AtkPt, DefPt);//バックスクリーンスコア
         }
         else if (Inning2 == 1)
         {
-            ScoreText.text = string.Format("{0}回裏\n{1}　-　{2}", Inning, AtkPt, DefPt);//バックスクリーンスコア
+            ScoreText.text = string.Format("1Pチーム　{0}\n2Pチーム　{1}", AtkPt, DefPt);//バックスクリーンスコア
         }     
         if (Ball.strike == true && ballcontroll1.shootSwitch == true && Ball.pitch == false && (Strike == 1 || Strike == 2) && gameset == false)//ストライク処理
         {
