@@ -994,7 +994,7 @@ public class GameTextes : MonoBehaviour
                 InningText.text = string.Format("試合終了");
                 
                 StrikeText.text = string.Format("2Ｐの勝ち");
-
+                OutText.text = string.Format("");
                 BGM4.gameObject.SetActive(true);
                 BGM1.gameObject.SetActive(false);
                 BGM2.gameObject.SetActive(false);
@@ -1012,7 +1012,7 @@ public class GameTextes : MonoBehaviour
                 InningText.text = string.Format("試合終了");
 
                 StrikeText.text = string.Format("1Ｐの勝ち");
-
+                OutText.text = string.Format("");
                 BGM4.gameObject.SetActive(true);
                 BGM1.gameObject.SetActive(false);
                 BGM2.gameObject.SetActive(false);
@@ -1023,29 +1023,14 @@ public class GameTextes : MonoBehaviour
         }
         else if (game == true)
         {
-            if ((9 <= Inning && Inning2 == 1 &&change==true&& (AtkPt < DefPt)))
+            if ((9 <= Inning && Inning2 == 1 &&change==true&& (AtkPt < DefPt) || (AtkPt - DefPt <= -10)))
             {
                 gameset = true;
                 ChangeText.text = string.Format("試合終了\n" +
                     "Spaceキーまたは左マウスでタイトルに戻る");
                 CText.gameObject.SetActive(true);
                 InningText.text = string.Format("試合終了");
-                if (Team2 == 0)
-                {
-                    StrikeText.text = string.Format("たいがーすの勝ち");
-                }
-                else if (Team2 == 1)
-                {
-                    StrikeText.text = string.Format("ぺりーずの勝ち");
-                }
-                else if (Team2 == 2)
-                {
-                    StrikeText.text = string.Format("ゴリラーズの勝ち");
-                }
-                else
-                {
-                    StrikeText.text = string.Format("後攻チームの勝ち");
-                }
+                StrikeText.text = string.Format("2Ｐの勝ち");
                 OutText.text = string.Format("");
 
                 BGM4.gameObject.SetActive(true);
@@ -1055,34 +1040,17 @@ public class GameTextes : MonoBehaviour
 
                 Lose = true;
             }
-            else if ((10 <= Inning && change == true && Inning2 == 0 && (AtkPt > DefPt)))
+            else if ((10 <= Inning && change == true && Inning2 == 0 && (AtkPt > DefPt)) || (Inning2 == 0 && change == true && AtkPt - DefPt >= 10))
             {
                 gameset = true;
                 ChangeText.text = string.Format("試合終了\n" +
                     "Spaceキーまたは左マウスでタイトルに戻る");
                 CText.gameObject.SetActive(true);
 
-                InningText.text = string.Format("試合終了");
-                if (Team1 == 0)
-                {
-                    StrikeText.text = string.Format("たいがーすの勝ち");
-                }
-                else if (Team1 == 1)
-                {
-                    StrikeText.text = string.Format("ぺりーずの勝ち");
-                }
-                else if (Team1 == 2)
-                {
-                    StrikeText.text = string.Format("ゴリラーズの勝ち");
-                }
-                else
-                {
-                    StrikeText.text = string.Format("先攻チームの勝ち");
-                }
 
-              
+                StrikeText.text = string.Format("1Ｐの勝ち");
 
-            OutText.text = string.Format("");
+                OutText.text = string.Format("");
 
                 BGM4.gameObject.SetActive(true);
                 BGM1.gameObject.SetActive(false);
