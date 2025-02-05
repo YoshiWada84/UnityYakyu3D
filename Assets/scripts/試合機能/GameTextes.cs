@@ -979,7 +979,7 @@ public class GameTextes : MonoBehaviour
         {
             CText.gameObject.SetActive(false);
         }
-       //‡I—¹”»’è
+        //‡I—¹”»’è
         if (gameset == true)
         {
             sec2++;
@@ -1023,7 +1023,7 @@ public class GameTextes : MonoBehaviour
         }
         else if (game == true)
         {
-            if ((9 <= Inning && Inning2 == 1 &&change==true&& (AtkPt < DefPt) || (AtkPt - DefPt <= -10)))
+            if ((9 <= Inning && Inning2 == 1 &&change==true&& (AtkPt < DefPt) || (AtkPt - DefPt <= -10))||(9 <= Inning&& Inning2 == 1 && (AtkPt < DefPt)))
             {
                 gameset = true;
                 ChangeText.text = string.Format("‡I—¹\n" +
