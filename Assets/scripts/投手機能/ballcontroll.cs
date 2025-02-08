@@ -35,7 +35,7 @@ public class ballcontroll : MonoBehaviour
     void Update()
     {
         float z = Random.RandomRange(2.0f, 3.0f);//‹…‘¬
-        float timeLimit = Random.RandomRange(0.8f, 1.3f);//“Š‹…‚Ü‚Å‚ÌŽžŠÔ
+        float timeLimit = Random.RandomRange(0.8f, 1.4f);//“Š‹…‚Ü‚Å‚ÌŽžŠÔ
         //“Š‹…“®ì
         if (((timer > timeLimit) & shootSwitch) & gamas.gameset == false && gamas.change == false && gamas.Wait == false)//“Š‹…
         {
@@ -53,7 +53,7 @@ public class ballcontroll : MonoBehaviour
             hit = false;
             homerun = false;
         }
-        else if (((timer > timeLimit * 2) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)//“Š‹…
+        else if (((timer > timeLimit * 3) & shootSwitch) & gamas.gameset == false && gamas.change == true && gamas.Wait == false)//“Š‹…
         {
             bomb.SetActive(true);
             Rigidbody rigidbody = GetComponent<Rigidbody>();
