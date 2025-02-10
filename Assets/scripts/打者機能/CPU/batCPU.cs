@@ -39,9 +39,9 @@ public class batCPU : MonoBehaviour
 
     void Update()
     {
-        if (ball.pitch == false)
+        if (ball.pitch2 == true)
         {
-            rand = Random.Range(3, 9);
+            rand = Random.Range(1, 9);
         }
 
         if ((ball.transform.position.z < rand) && r_sum < r_max)

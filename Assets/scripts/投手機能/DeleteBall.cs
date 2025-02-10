@@ -38,6 +38,7 @@ public class DeleteBall : MonoBehaviour
             rig.angularVelocity = Vector3.zero;
             transform.position = new Vector3(0, 1, 20f);
             ballcontroll.shootSwitch = true;
+            ball.pitch2 = true;
             ball.hit = true;
             if (gamas.Inning2 == 0)
             {
@@ -70,6 +71,7 @@ public class DeleteBall : MonoBehaviour
             rig.angularVelocity = Vector3.zero;
             transform.position = new Vector3(0, 1, 20f);
             ballcontroll.shootSwitch = true;
+            ball.pitch2 = true;
         }
         if (ball.pitch == false && gamas.gameset == false && gamas.change == false && gamas.Wait == false)
         {
@@ -97,6 +99,7 @@ public class DeleteBall : MonoBehaviour
             rig.angularVelocity = Vector3.zero;
             transform.position = new Vector3(0, 1, 20f);
             ballcontroll.shootSwitch = true;
+            ball.pitch2 = true;
         }
     }
 }

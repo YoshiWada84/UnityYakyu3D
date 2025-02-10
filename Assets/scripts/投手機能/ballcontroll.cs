@@ -13,6 +13,7 @@ public class ballcontroll : MonoBehaviour
     public GameTextes gamas;//試合関連スクリプト
     public bool pitch = false;//shootSwitchの弟みたいなやつ
     public static bool shootSwitch;//
+    public bool pitch2 = false;//shootSwitchの弟みたいなやつ2
 
     //打球判定
     public bool strike = false;//ストライク
@@ -29,6 +30,7 @@ public class ballcontroll : MonoBehaviour
         
         Rigidbody rigid = GetComponent<Rigidbody>();
         shootSwitch = true;
+        pitch2 = true;
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class ballcontroll : MonoBehaviour
 
             timer = 0.0f;
             shootSwitch = false;
+            pitch2 = false;
             pitch = true;
 
             strike = false;
@@ -61,6 +64,7 @@ public class ballcontroll : MonoBehaviour
 
             timer = 0.0f;
             shootSwitch = false;
+            pitch2 = false;
             gamas.change = false;
             pitch = true;
         }
