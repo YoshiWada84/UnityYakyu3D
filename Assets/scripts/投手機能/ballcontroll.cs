@@ -22,6 +22,9 @@ public class ballcontroll : MonoBehaviour
     public bool hit = false;//ヒット
     public bool homerun = false;//ホームラン
 
+    public GameObject Camera3;//3塁カメラ
+    public GameObject Camera1;//1塁カメラ
+
 
     public bool hitter = false;//打撃判定
     // Use this for initialization
@@ -38,6 +41,9 @@ public class ballcontroll : MonoBehaviour
     {
         float z = Random.RandomRange(2.0f, 3.0f);//球速
         float timeLimit = Random.RandomRange(0.8f, 1.4f);//投球までの時間
+
+        
+
         //投球動作
         if (((timer > timeLimit) & shootSwitch) & gamas.gameset == false && gamas.change == false && gamas.Wait == false)//投球
         {
@@ -76,6 +82,9 @@ public class ballcontroll : MonoBehaviour
         if (strike == true || out1 == true || foul == true || hit == true || homerun == true)//打球処理
         {
             hitter = false;
+
+            Camera3.SetActive(true);
+            Camera1.SetActive(true);
         }
        
 
@@ -93,12 +102,16 @@ public class ballcontroll : MonoBehaviour
         {
             hitter = true;
             hitBomb = true;
+            Camera3.SetActive(false);
+            Camera1.SetActive(false);
         }
         else if (collision.gameObject.tag == "Bat")
         {
             hitter = true;
             //pitch = false;
 
+            Camera3.SetActive(false);
+            Camera1.SetActive(false);
         }
         
 
