@@ -295,64 +295,96 @@ public class GameTextes : MonoBehaviour
         }
         else if (Team1 == 1)
         {
-            AttackText.text = string.Format("ぺりーず：{0}", AtkPt);
+            AttackText.text = string.Format("エトワールBC：{0}", AtkPt);
             if (Inning2 == 1)
             {
-                T1Text.text = string.Format("P　タイラー");
+                if (Inning <= 3 && game == false)
+                {
+                    T1Text.text = string.Format("P　そのだ");
+                }
+                else if (Inning <= 6 && game == false)
+                {
+                    T1Text.text = string.Format("P　はしもと");
+                }
+                else if (Inning <= 9 && game == false)
+                {
+                    T1Text.text = string.Format("P　いしばし");
+                }
+                else if (Inning >= 10 && game == false)
+                {
+                    T1Text.text = string.Format("P　わだ　ゆ");
+                }
+
+                if (Inning <= 9 && game == true)
+                {
+                    T1Text.text = string.Format("P　そのだ");
+                }
+                else if (Inning <= 15 && game == true)
+                {
+                    T1Text.text = string.Format("P　はしもと");
+                }
+                else if (Inning <= 21 && game == true)
+                {
+                    T1Text.text = string.Format("P　いしばし");
+                }
+                else if (Inning >= 22 && game == true)
+                {
+                    T1Text.text = string.Format("P　わだ　ゆ");
+                }
             }
             if (Inning2 == 0 && Team1Batter == 1)
             {
                 bat1L.SetActive(true);
                 bat1.SetActive(false);
-                T1Text.text = string.Format("{0}　あきる", Team1Batter);
+                T1Text.text = string.Format("{0}　わだ　ゆ", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 2)
             {
                 bat1L.SetActive(true);
                 bat1.SetActive(false);
-                T1Text.text = string.Format("{0}　おかだ", Team1Batter);
+                T1Text.text = string.Format("{0}　さがね", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 3)
             {
                 bat1L.SetActive(true);
                 bat1.SetActive(false);
-                T1Text.text = string.Format("{0}　あきやま", Team1Batter);
+                T1Text.text = string.Format("{0}　そのだ", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 4)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　バーサーク", Team1Batter);
+                T1Text.text = string.Format("{0}　いしばし", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 5)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　レアンドロ", Team1Batter);
+                T1Text.text = string.Format("{0}　はしもと", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 6)
             {
-                bat1L.SetActive(true);
-                bat1.SetActive(false);
-                T1Text.text = string.Format("{0}　とやま", Team1Batter);
+                bat1L.SetActive(false);
+                bat1.SetActive(true);
+                T1Text.text = string.Format("{0}　わだ　よ", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 7)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　おおしろ", Team1Batter);
+                T1Text.text = string.Format("{0}　わだ　し", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 8)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　うめもと", Team1Batter);
+                T1Text.text = string.Format("{0}　ふじおか", Team1Batter);
             }
             else if (Inning2 == 0 && Team1Batter == 9)
             {
                 bat1L.SetActive(false);
                 bat1.SetActive(true);
-                T1Text.text = string.Format("{0}　タイラー", Team1Batter);
+                T1Text.text = string.Format("{0}　ほんさこ", Team1Batter);
             }
         }
         else if (Team1 == 2)
@@ -612,64 +644,114 @@ public class GameTextes : MonoBehaviour
         }
         else if (Team2 == 1)
         {
-            DeffenceText.text = string.Format("ぺりーず：{0}", DefPt);
+            DeffenceText.text = string.Format("エトワールBC：{0}", DefPt);
             if (Inning2 == 0)
             {
-                T2Text.text = string.Format("P　おはら");
+
+                if (Inning <= 3 && game == false)
+                {
+                    T2Text.text = string.Format("P　こまつ");
+                }
+                else if (Inning <= 12 && game == false)
+                {
+                    T2Text.text = string.Format("P　そのだ");
+                }
+                else if (Inning <= 21 && game == false)
+                {
+                    T2Text.text = string.Format("P　わだ　よ");
+                }
+                else if (Inning <= 30 && game == false)
+                {
+                    T2Text.text = string.Format("P　にしさか　と");
+                }
+                else if (Inning <= 31 && game == false)
+                {
+                    T2Text.text = string.Format("P　いとう");
+                }
+                else if (Inning >= 32 && game == false)
+                {
+                    T2Text.text = string.Format("P　ふじおか");
+                }
+
+                if (Inning <= 3 && game == true)
+                {
+                    T2Text.text = string.Format("P　こまつ");
+                }
+                else if (Inning <= 12 && game == true)
+                {
+                    T2Text.text = string.Format("P　そのだ");
+                }
+                else if (Inning <= 21 && game == true)
+                {
+                    T2Text.text = string.Format("P　わだ　よ");
+                }
+                else if (Inning <= 30 && game == true)
+                {
+                    T2Text.text = string.Format("P　にしさか　と");
+                }
+                else if (Inning <= 31 && game == true)
+                {
+                    T2Text.text = string.Format("P　いとう");
+                }
+                else if (Inning >= 32 && game == true)
+                {
+                    T2Text.text = string.Format("P　ふじおか");
+                }
+
             }
             if (Inning2 == 1 && Team2Batter == 1)
             {
                 bat2L.SetActive(true);
                 bat2.SetActive(false);
-                T2Text.text = string.Format("{0}　あきる", Team2Batter);
+                T2Text.text = string.Format("{0}　わだ　ゆ", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 2)
             {
                 bat2L.SetActive(true);
                 bat2.SetActive(false);
-                T2Text.text = string.Format("{0}　おかだ", Team2Batter);
+                T2Text.text = string.Format("{0}　さがね", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 3)
             {
                 bat2L.SetActive(true);
                 bat2.SetActive(false);
-                T2Text.text = string.Format("{0}　あきやま", Team2Batter);
+                T2Text.text = string.Format("{0}　いとう", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 4)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　バーサーク", Team2Batter);
+                T2Text.text = string.Format("{0}　わだ　よ", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 5)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　レアンドロ", Team2Batter);
+                T2Text.text = string.Format("{0}　ふじおか", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 6)
             {
                 bat2L.SetActive(true);
                 bat2.SetActive(false);
-                T2Text.text = string.Format("{0}　とやま", Team2Batter);
+                T2Text.text = string.Format("{0}　にしさか　と", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 7)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　おおしろ", Team2Batter);
+                T2Text.text = string.Format("{0}　わだ　し", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 8)
             {
-                bat2L.SetActive(false);
-                bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　うめもと", Team2Batter);
+                bat2L.SetActive(true);
+                bat2.SetActive(false);
+                T2Text.text = string.Format("{0}　こまつ", Team2Batter);
             }
             else if (Inning2 == 1 && Team2Batter == 9)
             {
                 bat2L.SetActive(false);
                 bat2.SetActive(true);
-                T2Text.text = string.Format("{0}　おはら", Team2Batter);
+                T2Text.text = string.Format("{0}　にしさか　け", Team2Batter);
             }
         }
         else if (Team2 == 2)
@@ -961,7 +1043,8 @@ public class GameTextes : MonoBehaviour
         //タイブレーク
         if (game == false)
         {
-            if (4 <= Inning && change == true)
+            //if (4 <= Inning && change == true)
+            if (6 <= Inning && change == true)//大会仕様
             {
                 Runner = 2;
             }
@@ -985,7 +1068,23 @@ public class GameTextes : MonoBehaviour
             sec2++;
         }
         if (game == false) {
-            if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || (AtkPt - DefPt <= -7))
+            if (10 <= Inning)//大会仕様
+            {
+                gameset = true;
+                ChangeText.text = string.Format("試合終了\n" +
+                    "Spaceキーまたは左マウスでタイトルに戻る");
+                CText.gameObject.SetActive(true);
+                InningText.text = string.Format("試合終了");
+
+                StrikeText.text = string.Format("引き分け");
+                OutText.text = string.Format("");
+                BGM4.gameObject.SetActive(true);
+                BGM1.gameObject.SetActive(false);
+                BGM2.gameObject.SetActive(false);
+                BGM3.gameObject.SetActive(false);
+
+            }
+            else if ((3 <= Inning && Inning2 == 1 && (AtkPt < DefPt)) || (AtkPt - DefPt <= -7))
             {
                 gameset = true;
                 ChangeText.text = string.Format("試合終了\n" +
