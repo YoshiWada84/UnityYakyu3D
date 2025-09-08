@@ -31,7 +31,9 @@ namespace ExplosionSample
                 var explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
                 explosion.Explode();
 
+                
             }
         }
+        
     }
 }
